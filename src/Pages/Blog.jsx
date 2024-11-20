@@ -5,7 +5,7 @@ import ClientTweetCard from "../Components/magicui/ClientTweetCard";
 function Blog() {
   return (
     <div
-    data-aos='fade-left' data-aos-duration='1000'
+    data-aos='fade-down' data-aos-duration='1000'
     className='text-neutral-700 dark:text-neutral-300'
     >
       <h1 className='text-xl '>Blog</h1>

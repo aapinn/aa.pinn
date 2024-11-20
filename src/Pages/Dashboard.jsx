@@ -2,7 +2,7 @@ import React from 'react'
 
 function Dashboard() {
   return (
-    <div data-aos='fade-left' data-aos-duration='1000'>Dashboard</div>
+    <div data-aos='fade-down' data-aos-duration='1000'>Dashboard</div>
   )
 }
 

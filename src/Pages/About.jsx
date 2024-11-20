@@ -21,7 +21,7 @@ const dataimages = [image1, image2, image3, image4, image5, image6];
 
 const About = () => {
     return (
-        <div data-aos='fade-left' data-aos-duration='1000'>
+        <div data-aos='fade-down' data-aos-duration='1000'>
             <div  className="flex flex-col gap-6 border-neutral-400 dark:border-neutral-500 ">
                 <ContentComponent
                     className={'pb-2 border-b border-dashed'}

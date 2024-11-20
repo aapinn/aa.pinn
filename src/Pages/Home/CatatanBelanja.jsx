@@ -5,7 +5,7 @@ import catatanBelanjaBanner from '../../image/catatanBelanjaBanner.png'
 import TextDescription from '../components/TextDescription'
 function CatatanBelanja() {
   return (
-    <div data-aos='fade-left' data-aos-duration='1000'>
+    <div data-aos='fade-down' data-aos-duration='1000'>
     <BackButton/>
     <ContentComponent
       className={'pb-2 border-b border-dashed'}

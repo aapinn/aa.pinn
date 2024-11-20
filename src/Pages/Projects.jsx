@@ -2,7 +2,7 @@ import React from 'react'
 
 function Projects() {
   return (
-    <div data-aos='fade-left' data-aos-duration='1000'>Projects</div>
+    <div data-aos='fade-down' data-aos-duration='1000'>Projects</div>
   )
 }
 
