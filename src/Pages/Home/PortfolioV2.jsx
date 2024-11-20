@@ -32,7 +32,7 @@ function portfolioV2() {
       <TextDescription
         subtitle={
           <>
-          If you want to see my personal website just click on here  <a href="https://catatan-belanja-q.vercel.app/" target='_blank' className='bg-neutral-300 p-1 rounded-md text-blue-700 dark:bg-neutral-700 dark:text-blue-300'> PortfolioV2</a> 
+          If you want to see my personal website just click on here  <a href="https://aapinn-v2.vercel.app/" target='_blank' className='bg-neutral-300 p-1 rounded-md text-blue-700 dark:bg-neutral-700 dark:text-blue-300'> PortfolioV2</a> 
           </>
         }
       />
