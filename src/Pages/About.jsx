@@ -16,6 +16,7 @@ import {
     IconFileBroken,
     IconSignature,
     IconTableColumn, } from "@tabler/icons-react";
+import TimelineComponent from "./components/TimelineComponent";
 
 const dataimages = [image1, image2, image3, image4, image5, image6];
 
@@ -46,13 +47,13 @@ const About = () => {
             icon={<RiShoppingBag3Line />}
             text={'My Experience'}
             subtitle={'My proffesional career journey'}
-            Button={<><RiArrowDownSLine className="border rounded-xl" /> Download my portfolio</>}
+            Button={<div className="flex items-center gap-1"><RiArrowDownSLine className="border rounded-xl" /> <span className="hidden sm:flex">Download</span> My portfolio</div>}
             item={[WorkExperience]}
             showCards={false}
             link='https://www.google.com'
             className={"border-t my-5 py-4"}
             />
-
+            <TimelineComponent/>
         </div>
         
     )

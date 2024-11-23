@@ -14,7 +14,8 @@ import albany from "../image/albany.png"
 import indomaret from "../image/indomaret.png"
 import aceHardware from "../image/aceHardware.png"
 import ahi from "../image/ahi.png"
-
+import FloatingNavbar from "../Pages/components/FloatingNavbar";
+import { LiaBlogSolid } from "react-icons/lia";
 
 
 
@@ -36,7 +37,7 @@ export const navLinks = [
         name: 'Blog',
         path: 'blog',
         id:3,
-        icon: <BiLeaf />
+        icon: <LiaBlogSolid />
 
     },
     {
@@ -71,7 +72,7 @@ export const navLinks = [
 // for navbar
 export const Navbar = (props) => {
   return (
-      <div className={` w-full h-[12rem]n relative lg:fixed overflow-hidden bg-transparent lg:border-none lg:h-full lg:w-[17rem] lg:flex top-0 left-0 z-50 lg:overflow-y-auto scrollbar-hide duration-500`}>
+      <div className={` w-full h-[12rem] relative lg:fixed overflow-hidden bg-transparent lg:border-none lg:h-full lg:w-[17rem] lg:flex top-0 left-0 z-50 lg:overflow-y-auto scrollbar-hide duration-500`}>
         <div className="duration-500 bg-transparent lg:bg-white dark:lg:bg-black lg:absolute font-normal p-4 flex flex-col z-50 gap-3 mt-1 py-2 dark:text-neutral-200 text-md rounded-r-2xl lg:shadow-[4px_0_10px_rgb(0,0,0,0.2)] dark:shadow-[4px_0_10px_rgb(0,0,0,0.2)] dark:shadow-neutral-900">
           <div className="relative h-[7rem] mt-2 bg-gradient-to-br from-[rgba(209,213,219,1)50%] to-neutral-800 via-neutral-700 rounded-lg flex justify-center
           after:w-4 after:h-4 after:bg-white after:absolute after:dark:bg-black after:top-0 after:left-[93px]
@@ -117,6 +118,7 @@ export const Navbar = (props) => {
             ©2024 with 💖 by Arif Rahman
           </p>
         </div>
+        <FloatingNavbar/>
       </div>
     );
   };

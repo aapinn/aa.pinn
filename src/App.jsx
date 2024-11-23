@@ -42,7 +42,7 @@ function App() {
           />
       <NavbarComponent />
       {/* Tambahkan margin-left untuk memberi ruang pada konten agar tidak tertutup navbar */}
-        <div className=" relative p-2 lg:px-8 lg:ml-[16rem] lg:py-12">
+        <div className="max-w-7xl relative p-2 lg:px-8 lg:ml-[16rem] lg:py-12">
           <DynamicTitle/>
           <Routes key={location.pathname}>
             <Route path="/" element={<Home/>} />
