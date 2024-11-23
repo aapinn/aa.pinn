@@ -12,7 +12,7 @@ import {
 import { motion } from "framer-motion";
 export default function BentoGridComponent() {
   return (
-    (<BentoGrid className="max-w-7xl mx-auto md:auto-rows-[20rem]">
+    <BentoGrid className="max-w-7xl mx-auto md:auto-rows-[20rem]">
       {items.map((item, i) => (
         <BentoGridItem
           key={i}
@@ -22,7 +22,7 @@ export default function BentoGridComponent() {
           className={cn("[&>p:text-lg]", item.className)}
           icon={item.icon} />
       ))}
-    </BentoGrid>)
+    </BentoGrid>
   );
 }
 

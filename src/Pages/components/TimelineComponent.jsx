@@ -1,5 +1,5 @@
 import React from "react";
-import { Timeline } from "@/components/ui/timeline";
+import { Timeline } from "../../Components/ui/timeline";
 
 const TimelineComponent =()=>{
   const data = [
