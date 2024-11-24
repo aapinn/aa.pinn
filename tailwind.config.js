@@ -1,3 +1,4 @@
+const {nextui} = require('@nextui-org/theme');
 const svgToDataUri = require("mini-svg-data-uri");
 const plugin = require('tailwindcss/plugin');
 const colors = require("tailwindcss/colors");
@@ -5,10 +6,11 @@ const { default: flattenColorPalette } = require("tailwindcss/lib/util/flattenCo
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-	content: [
-		'./src/**/*.{js,ts,jsx,tsx}',
-		'!./node_modules/**/*'
-	  ],	
+  content: [
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "!./node_modules/**/*",
+    "./node_modules/@nextui-org/theme/dist/components/(card|ripple).js"
+  ],	
   theme: {
   	fontFamily: {
   		sora: ['Sora', 'sans-serif'],
@@ -110,24 +112,19 @@ module.exports = {
   	}
   },
   darkMode: ['class'],
-  plugins: [
-
-    require("tailwindcss-animate"),
-    plugin(function ({ addUtilities }) {
+  plugins: [require("tailwindcss-animate"),plugin(function ({ addUtilities }) {
       addUtilities({
         '.scrollbar-hide': {
-          '-ms-overflow-style': 'none',  /* IE and Edge */
-          'scrollbar-width': 'none',  /* Firefox */
+          '-ms-overflow-style': 'none',/* IE and Edge */
+          'scrollbar-width': 'none',/* Firefox */
         },
-        '.scrollbar-hide::-webkit-scrollbar': {
-          'display': 'none',  /* Chrome, Safari, and Opera */
-        },
-      });
-    }),
-    function addVariablesForColors({ addBase, theme }) {
-      let allColors = flattenColorPalette(theme("colors"));
+		'.scrollbar-hide::-webkit-scrollbar': {
+          'display': 'none',/* Chrome,Safari,and Opera */
+        },});
+    }),function addVariablesForColors({ addBase,theme }) {
+      let allColors = flattenColorPalette(theme('colors'));
       let newVars = Object.fromEntries(
-        Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+        Object.entries(allColors).map(([key,val]) => [`--${key}`, nextui(val)])
       );
       addBase({
         ":root": newVars,
