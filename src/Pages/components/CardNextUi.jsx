@@ -5,7 +5,7 @@ import Giant from '../../image/giant.png'
 import Ace from '../../image/aceHardware.png'
 import Albany from '../../image/albany.png'
 import Ahi from '../../image/ahi.png'
-import azko from '../../image/azko.webp'
+import azko from '../../image/azko.png'
 
 
 export default function CardNextUi() {

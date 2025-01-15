@@ -10,7 +10,7 @@ import image3 from "../image/indomaret.png"
 import image4 from "../image/aceHardware.png"
 import image5 from "../image/ahi.png"
 import image6 from "../image/service/powerOfCommunication.jpeg"
-import image7 from "../image/azko.webp"
+import image7 from "../image/azko.png"
 import {   
     IconArrowWaveRightUp,
     IconClipboardCopy,
