@@ -5,6 +5,7 @@ import Giant from '../../image/giant.png'
 import Ace from '../../image/aceHardware.png'
 import Albany from '../../image/albany.png'
 import Ahi from '../../image/ahi.png'
+import azko from '../../image/azko.webp'
 
 
 export default function CardNextUi() {
@@ -30,10 +31,21 @@ export default function CardNextUi() {
       date: "Nov 2023 - Mei 2024",
     },
     {
+      path: "Ace",
+      img: Ace,
+      date: "Nov 2023 - Mei 2024",
+    },
+    {
       path: "Ahi",
       img: Ahi,
       date: "Jun 2024 - Present",
     },
+    {
+      path: "azko",
+      img: azko,
+      date: "Jan 2021 - Present",
+    },
+
   ];
 
   return (

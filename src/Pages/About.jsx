@@ -10,6 +10,7 @@ import image3 from "../image/indomaret.png"
 import image4 from "../image/aceHardware.png"
 import image5 from "../image/ahi.png"
 import image6 from "../image/service/powerOfCommunication.jpeg"
+import image7 from "../image/azko.webp"
 import {   
     IconArrowWaveRightUp,
     IconClipboardCopy,
@@ -19,7 +20,7 @@ import {
 import TimelineComponent from "./components/TimelineComponent";
 import CardNextUi from "./components/CardNextUi";
 
-const dataimages = [image1, image2, image3, image4, image5, image6];
+const dataimages = [image1, image2, image3, image4, image5, image6, image7];
 
 const About = () => {
     return (
@@ -111,7 +112,15 @@ const items = [
       header: <Skeleton images={dataimages[4]} />,
       icon: <IconArrowWaveRightUp className="h-4 w-4 text-neutral-500" />,
       path:'Pt Asirasi hidup Indonesia'
-    },
+    }, 
+    {
+      key:6,
+      title: "Pt az·ko Indonesia Tbk",
+      description: "Understand the impact of effective communication in our lives.",
+      header: <Skeleton images={dataimages[6]} />,
+      icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
+      path:'Pt az·ko Indonesia Tbk'
+    }
 
   ];
   
