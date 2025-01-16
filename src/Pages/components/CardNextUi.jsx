@@ -31,11 +31,6 @@ export default function CardNextUi() {
       date: "Nov 2023 - Mei 2024",
     },
     {
-      path: "Ace",
-      img: Ace,
-      date: "Nov 2023 - Mei 2024",
-    },
-    {
       path: "Ahi",
       img: Ahi,
       date: "Jun 2024 - Present",
