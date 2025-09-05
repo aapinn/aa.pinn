@@ -17,6 +17,7 @@ import DynamicTitle from './Pages/components/DynamicTitle'
 import { ShootingStars } from '../src/Components/ui/shooting-stars'
 import { StarsBackground } from '../src/Components/ui/stars-background'
 import GiantProfile from './Pages/About/GiantProfile'
+import FloatingNavbar from './Pages/components/FloatingNavbar'
 
 AOS.init({
   once:true
@@ -28,22 +29,23 @@ function App() {
     window.scrollTo(0, 0)
   }, [location.pathname])
 
-  return (    
-    <div className="px-3 duration-500 font-sora dark:bg-black bg-white dark:bg-none bg-grid-slate-400/[0.1]">
-     
-      <div className="absolute w-full pointer-events-none inset-0 lg:flex items-center justify-center dark:bg-black bg-white duration-500 [mask-image:radial-gradient(ellipse_at_center,white,transparent_50%)]"></div>
+  return (
+    <div className="px-3 w-full h-full mt-12 md:mt-16 lg:mt-0 container font-sora">
       <ShootingStars
         starWidth='15'
         minDelay={'10'}
         maxSpeed='50'
-        className='h-full'/>
+        className="fixed inset-0 h-screen w-screen -z-10 dark:bg-black"/> 
       <StarsBackground 
-        className='h-full'
+        className="fixed inset-0 h-screen w-screen -z-10"
           />
+      <div className="w-full pointer-events-none inset-0 lg:flex items-center justify-center dark:bg-black bg-white duration-500 dark:[mask-image:none] [mask-image:radial-gradient(ellipse_at_center,white,transparent_50%)] dark:bg-grid-transparent bg-grid-slate-400/[0.2]"></div>
+
       <NavbarComponent />
       {/* Tambahkan margin-left untuk memberi ruang pada konten agar tidak tertutup navbar */}
         <div className="max-w-7xl relative p-2 lg:px-8 lg:ml-[16rem] lg:py-12">
           <DynamicTitle/>
+          <FloatingNavbar/>
           <Routes key={location.pathname}>
             <Route path="/" element={<Home/>} />
             <Route path="/about" element={<About />} />
