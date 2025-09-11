@@ -11,7 +11,7 @@ function CardComponent({ cards, clasName, style }) {
           key={cardData.id}
           to={cardData.path}>
           <div key={cardData.id} className={` ${clasName} flex hover:scale-105 duration-300 py-5 flex-col gap-[4px] text-slate-700 dark:text-slate-300 `}>
-            <div className={`${style} w-64 h-28 border border-neutral-200 dark:border-neutral-800 bg-cover rounded-md ${hasIcon ? '' : 'bg-gradient-to-br from-slate-300 to-slate-800'}`}
+            <div className={`${style} w-64 h-28 border mb-3 border-neutral-200 dark:border-neutral-800 bg-cover rounded-md ${hasIcon ? '' : 'bg-gradient-to-br from-slate-300 to-slate-800'}`}
               style={{ backgroundImage: hasIcon ? `url(${card.icon})` : 'bg-gradient-to-br from-slate-300 to-slate-800'}}
             >
             </div>

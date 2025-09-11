@@ -80,7 +80,7 @@ export const Navbar = (props) => {
             after:w-4 after:h-5 after:absolute after:bg-inherit after:bg-neutral-300 z-50 after:top-[-0.1px] after:right-[-16px] after:rounded-tl-xl
             before:w-6 before:h-6 before:absolute before:bg-inherit before:bg-neutral-300 before:top-[42px] before:left-0 before:rounded-tl-xl">
               <p className="border border-neutral-600 text-neutral-900 dark:text-neutral-300 font-normal text-xs p-1 pr-2 rounded-2xl">
-                🟢 Hire me
+                  <span className="animate-pulse">🟢</span> Hire me 
               </p>
             </div>
             <img
@@ -122,6 +122,30 @@ export const Navbar = (props) => {
   };
   
 export const itemCards = [
+    {
+        id: 1,
+        title: 'My Portfolio V1',
+        date: 'My portfolio, with Vite + React + Library',
+        icon: portfolioV2,
+        path:'latestArticle/PortfolioV2'
+      
+    },
+    {
+        id: 2,
+        title: 'Catatan Belanja',
+        date: 'Website for note your activity',
+        icon: catatanBelanja,
+        path:'latestArticle/CatatanBelanja'
+
+      
+    },
+    {
+        id: 3,
+        title: 'My Portfolio V3',
+        date: 'Present portfolio using React',
+        icon: portfolioV3
+      
+    },
     {
         id: 1,
         title: 'My Portfolio V1',
