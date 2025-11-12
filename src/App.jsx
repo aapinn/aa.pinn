@@ -43,7 +43,7 @@ function App() {
 
       <NavbarComponent />
       {/* Tambahkan margin-left untuk memberi ruang pada konten agar tidak tertutup navbar */}
-        <div className="max-w-7xl relative p-2 lg:p-8 lg:ml-[16rem] dark:bg-neutral-950/80 mt-3 min-h-[calc(100vh-20svh)] shadow-md  rounded-2xl mb-5">
+        <div className="max-w-7xl relative p-2 lg:p-8 px-5 lg:ml-[16rem] dark:bg-neutral-950/80 mt-3 min-h-[calc(100vh-20svh)] shadow-md  rounded-2xl mb-5">
           <DynamicTitle/>
           <FloatingNavbar/>
           <Routes key={location.pathname}>
