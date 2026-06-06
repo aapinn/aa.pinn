@@ -5,6 +5,9 @@ import { BiLeaf } from "react-icons/bi";
 import { RiServiceLine } from "react-icons/ri";
 import { IoPaperPlaneOutline } from "react-icons/io5";
 import { MdVerified } from "react-icons/md";
+import { BsCodeSlash } from "react-icons/bs";
+import { HiOutlineLightBulb } from "react-icons/hi";
+import { GoProjectSymlink } from "react-icons/go";
 import DarkModeToggle from "../Pages/components/DarkModeToggle";
 import portfolioV3 from "../image/portfolioV3.png"
 import catatanBelanja from "../image/catatanBelanja.png"
@@ -15,8 +18,6 @@ import indomaret from "../image/indomaret.png"
 import aceHardware from "../image/aceHardware.png"
 import ahi from "../image/ahi.png"
 import { LiaBlogSolid } from "react-icons/lia";
-
-
 
 export const navLinks = [
     {
@@ -30,48 +31,48 @@ export const navLinks = [
         path: 'about',
         id:2,
         icon: <BiLeaf />
-
     },
     {
-        name: 'Blog',
-        path: 'blog',
+        name: 'Projects',
+        path: 'projects',
         id:3,
-        icon: <LiaBlogSolid />
-
-    },
-    {
-        name: 'Roadmap',
-        path: 'roadmap',
-        id:4,
-        icon:<RiServiceLine />
-
-    },
-    {
-        name: 'Dashboard',
-        path: 'dashboard',
-        id:5,
-        icon:<RiServiceLine />
-
+        icon: <GoProjectSymlink />
     },
     {
         name: 'Services',
         path: 'services',
+        id:4,
+        icon: <RiServiceLine />
+    },
+    {
+        name: 'Blog',
+        path: 'blog',
+        id:5,
+        icon: <LiaBlogSolid />
+    },
+    {
+        name: 'Roadmap',
+        path: 'roadmap',
         id:6,
-        icon:<RiServiceLine />
-
+        icon: <HiOutlineLightBulb />
+    },
+    {
+        name: 'Dashboard',
+        path: 'dashboard',
+        id:7,
+        icon: <BsCodeSlash />
     },
     {
         name: 'Contact',
         path: 'contact',
-        id:7,
-        icon:<IoPaperPlaneOutline />
+        id:8,
+        icon: <IoPaperPlaneOutline />
     }
 ]
 
-// for navbar
 export const Navbar = (props) => {
   return (
-      <div className={` w-full h-[12rem] lg:fixed lg:mt-2 overflow-hidden bg-transparent lg:border-none lg:h-full lg:w-[17rem] top-0 z-50 lg:overflow-y-auto scrollbar-hide duration-500`}>
+      <div className="w-full h-[12rem] lg:fixed lg:mt-2 overflow-hidden bg-transparent lg:border-none lg:h-full lg:w-[17rem] top-0 z-50 lg:overflow-y-auto scrollbar-hide duration-500">
         <div className="duration-500 bg-transparent lg:bg-white dark:lg:bg-black lg:absolute font-normal p-4 flex flex-col z-50 gap-3 mt-1 py-2 dark:text-neutral-200 text-md rounded-r-2xl lg:shadow-[4px_0_10px_rgb(0,0,0,0.2)] dark:shadow-[4px_0_10px_rgb(0,0,0,0.2)] dark:shadow-neutral-900">
           <div className="relative h-[7rem] mt-2 bg-gradient-to-br from-[rgba(209,213,219,1)50%] to-neutral-800 via-neutral-700 rounded-lg flex justify-center
           after:w-4 after:h-4 after:bg-white after:absolute after:dark:bg-black after:top-0 after:left-[93px]
@@ -89,7 +90,6 @@ export const Navbar = (props) => {
               width={90}
               className="absolute rounded-full top-[4rem] bg-neutral-100 p-2 hover:invert duration-500 overflow-hidden shadow-md border-white border-2 "/>
             <DarkModeToggle />
-
           </div>
           <div className="mt-14 text-center font-semibold pb-2 border-b border-neutral-300 dark:border-neutral-400 text-neutral-800 dark:text-neutral-300">
             <h1 className="flex items-center justify-center gap-2 text-lg lg:text-xl">
@@ -114,7 +114,7 @@ export const Navbar = (props) => {
             </div>
           ))}
           <p className="text-sm text-neutral-700 dark:text-neutral-400 my-5">
-            ©2024 with 💖 by Arif Rahman
+            ©2025 with 💖 by Arif Rahman
           </p>
         </div>
       </div>
@@ -124,51 +124,45 @@ export const Navbar = (props) => {
 export const itemCards = [
     {
         id: 1,
-        title: 'My Portfolio V1',
-        date: 'My portfolio, with Vite + React + Library',
+        title: 'My Portfolio V2',
+        date: 'Built with Vite + React + Tailwind',
         icon: portfolioV2,
         path:'latestArticle/PortfolioV2'
-      
     },
     {
         id: 2,
         title: 'Catatan Belanja',
-        date: 'Website for note your activity',
+        date: 'Shopping note web app',
         icon: catatanBelanja,
         path:'latestArticle/CatatanBelanja'
-
-      
     },
     {
         id: 3,
         title: 'My Portfolio V3',
-        date: 'Present portfolio using React',
-        icon: portfolioV3
-      
+        date: 'Current portfolio with full features',
+        icon: portfolioV3,
+        path:'latestArticle/PortfolioV3'
     },
     {
-        id: 1,
-        title: 'My Portfolio V1',
-        date: 'My portfolio, with Vite + React + Library',
-        icon: portfolioV2,
-        path:'latestArticle/PortfolioV2'
-      
-    },
-    {
-        id: 2,
+        id: 4,
         title: 'Catatan Belanja',
         date: 'Website for note your activity',
         icon: catatanBelanja,
         path:'latestArticle/CatatanBelanja'
-
-      
     },
     {
-        id: 3,
-        title: 'My Portfolio V3',
-        date: 'Present portfolio using React',
-        icon: portfolioV3
-      
+        id: 5,
+        title: 'Portfolio V2',
+        date: 'My portfolio, with Vite + React',
+        icon: portfolioV2,
+        path:'latestArticle/PortfolioV2'
+    },
+    {
+        id: 6,
+        title: 'Portfolio V3',
+        date: 'Present portfolio using React + Tailwind',
+        icon: portfolioV3,
+        path:'latestArticle/PortfolioV3'
     }
   ];
   
@@ -204,9 +198,70 @@ export const WorkExperience = [
         {
           id: 5,
           title: 'Pt Aspirasi Hidup Indonesia Tbk',
-          date: 'Juni 2022 - Present',
+          date: 'Juni 2024 - Present',
           icon: ahi,
           path:'experience/Ahi'
         },
-      
   ]
+
+export const educationData = [
+  {
+    id: 1,
+    school: "SMK Negeri 1 Kota Bekasi",
+    major: "Multimedia",
+    year: "2015 - 2018",
+    desc: "Learned the fundamentals of design, video editing, and basic programming"
+  },
+  {
+    id: 2,
+    school: "Self-Taught Developer",
+    major: "Frontend Web Development",
+    year: "2019 - Present",
+    desc: "Continuous learning through online courses, documentation, and building projects"
+  }
+]
+
+export const servicesData = [
+  {
+    id: 1,
+    title: "Web Development",
+    desc: "Building responsive and performant websites using React, Next.js, and modern tools",
+    icon: "💻",
+    features: ["Single Page Apps", "Responsive Design", "API Integration", "Performance Optimization"]
+  },
+  {
+    id: 2,
+    title: "UI/UX Design",
+    desc: "Crafting beautiful and intuitive user interfaces with modern design principles",
+    icon: "🎨",
+    features: ["Wireframing", "Prototyping", "Design Systems", "User Research"]
+  },
+  {
+    id: 3,
+    title: "Data Management",
+    desc: "Organizing and managing data for easy access and insightful decision making",
+    icon: "📊",
+    features: ["Database Design", "Data Entry", "Spreadsheet Management", "Reporting"]
+  },
+  {
+    id: 4,
+    title: "Graphic Design",
+    desc: "Creating visual content including logos, posters, and digital artwork",
+    icon: "✏️",
+    features: ["Logo Design", "Social Media Graphics", "Poster Design", "Brand Identity"]
+  },
+  {
+    id: 5,
+    title: "Tech Consulting",
+    desc: "Providing expert advice on technology stack, architecture, and best practices",
+    icon: "🚀",
+    features: ["Tech Stack Advice", "Code Review", "Architecture Planning", "Best Practices"]
+  },
+  {
+    id: 6,
+    title: "Digital Marketing",
+    desc: "Helping your online presence grow with effective digital strategies",
+    icon: "📈",
+    features: ["SEO Optimization", "Social Media", "Content Strategy", "Analytics"]
+  }
+]

@@ -4,8 +4,6 @@ import TextDescription from '../Pages/components/TextDescription'
 import CardComponent from '../Pages/components/CardComponent';
 import { itemCards } from '../data';
 
-
-
 function ContentComponent({icon, text, subtitle, Button,link, showCards = true, className}) {
   return (
     <div className={`${className}relative border-slate-400 text-sm  dark:border-neutral-600`}>
@@ -22,10 +20,9 @@ function ContentComponent({icon, text, subtitle, Button,link, showCards = true, 
             <CardComponent cards={[itemCards[1]]}/>
             <CardComponent cards={[itemCards[0]]}/>
             <CardComponent cards={[itemCards[2]]}/>
-            <CardComponent cards={[itemCards[2]]}/>
-            <CardComponent cards={[itemCards[2]]}/>
-            <CardComponent cards={[itemCards[2]]}/>
-            <CardComponent cards={[itemCards[2]]}/>
+            <CardComponent cards={[itemCards[3]]}/>
+            <CardComponent cards={[itemCards[4]]}/>
+            <CardComponent cards={[itemCards[5]]}/>
             </>
           )}
 
