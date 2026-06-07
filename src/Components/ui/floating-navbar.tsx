@@ -1,9 +1,10 @@
 "use client";
 import { NavLink } from "react-router-dom";
 import DarkModeToggle from "../../Pages/components/DarkModeToggle";
-import { cn } from "@/lib/utils";
 
-export const FloatingNav = ({navItems, className}) => {
+const cn = (...classes) => classes.filter(Boolean).join(" ");
+
+export const FloatingNav = ({ navItems, className }) => {
   return (
     <div
       className={cn(
@@ -11,7 +12,7 @@ export const FloatingNav = ({navItems, className}) => {
         className
       )}
     >
-      {navItems.map((navItem: any, idx: number) => (
+      {navItems.map((navItem, idx) => (
         <NavLink
           key={`link=${idx}`}
           to={navItem.path}
@@ -24,7 +25,7 @@ export const FloatingNav = ({navItems, className}) => {
         </NavLink>
       ))}
       <div className="pl-7 block md:hidden">
-        <DarkModeToggle />
+        {/* <DarkModeToggle /> */}
       </div>
     </div>
   );
