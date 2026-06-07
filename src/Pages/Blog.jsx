@@ -1,17 +1,11 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
-import { TbHeart, TbMessageCircle, TbSend, TbBookmark, TbDots, TbBrandInstagram, TbBrandFacebook, TbBrandTiktok } from "react-icons/tb"
+import { TbHeart, TbMessageCircle, TbSend, TbBookmark, TbDots } from "react-icons/tb"
 import logo from "../image/LogoBrand.png"
 import portfolioV3 from "../image/portfolioV3.png"
 import catatanBelanja from "../image/catatanBelanja.png"
 import enterprise from "../image/enterprise.jpg"
 import pink from "../image/pink.png"
-
-const socials = [
-  { key: "facebook", label: "Facebook", icon: TbBrandFacebook, url: "https://www.facebook.com/avenged.arifsevenfold", color: "text-blue-600" },
-  { key: "instagram", label: "Instagram", icon: TbBrandInstagram, url: "https://www.instagram.com/aaa.pinnn/", color: "text-pink-500" },
-  { key: "tiktok", label: "TikTok", icon: TbBrandTiktok, url: "https://www.tiktok.com/@arifpake.ef", color: "text-neutral-800 dark:text-neutral-200" },
-]
 
 const posts = [
   {
@@ -62,7 +56,6 @@ const posts = [
 
 function Blog() {
   const [liked, setLiked] = useState({})
-  const [socialTab, setSocialTab] = useState("facebook")
 
   const toggleLike = (id) => {
     setLiked((prev) => ({ ...prev, [id]: !prev[id] }))
@@ -72,97 +65,6 @@ function Blog() {
     <div data-aos="fade-down" data-aos-duration="1000" className="max-w-lg mx-auto">
       <h1 className="text-xl font-bold text-neutral-800 dark:text-neutral-200 mb-6">Blog</h1>
 
-      {/* Social Media Embed */}
-      <div className="mb-8 rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 overflow-hidden shadow-sm">
-        {/* Tabs */}
-        <div className="flex border-b border-neutral-200 dark:border-neutral-700">
-          {socials.map((s) => {
-            const Icon = s.icon
-            return (
-              <button
-                key={s.key}
-                onClick={() => setSocialTab(s.key)}
-                className={`flex-1 flex items-center justify-center gap-2 py-3 text-sm font-medium transition-colors ${
-                  socialTab === s.key
-                    ? "border-b-2 border-purple-500 text-purple-600 dark:text-purple-400"
-                    : "text-neutral-500 hover:text-neutral-700 dark:hover:text-neutral-300"
-                }`}
-              >
-                <Icon className={`text-base ${s.color}`} />
-                <span className="hidden sm:inline">{s.label}</span>
-              </button>
-            )
-          })}
-        </div>
-
-        {/* Facebook Embed */}
-        {socialTab === "facebook" && (
-          <div className="p-4 flex justify-center">
-            <iframe
-              src="https://www.facebook.com/plugins/page.php?href=https://www.facebook.com/avenged.arifsevenfold&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
-              width="340"
-              height="500"
-              style={{ border: "none", overflow: "hidden", maxWidth: "100%" }}
-              scrolling="no"
-              frameBorder="0"
-              allowFullScreen
-              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-              title="Facebook Page"
-            />
-          </div>
-        )}
-
-        {/* Instagram Embed */}
-        {socialTab === "instagram" && (
-          <div className="p-6 flex flex-col items-center gap-4 text-center">
-            <div className="w-20 h-20 rounded-full bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 p-0.5">
-              <img src={logo} alt="" className="w-full h-full rounded-full object-cover border-2 border-white" />
-            </div>
-            <div>
-              <p className="font-semibold text-neutral-800 dark:text-neutral-200">aaa.pinnn</p>
-              <p className="text-sm text-neutral-500">Arif Rahman</p>
-            </div>
-            <a
-              href="https://www.instagram.com/aaa.pinnn/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 py-2 rounded-lg bg-blue-500 hover:bg-blue-600 text-white text-sm font-medium transition-colors"
-            >
-              Follow @aaa.pinnn
-            </a>
-            <p className="text-xs text-neutral-500">
-              Klik tombol di atas untuk buka Instagram
-            </p>
-          </div>
-        )}
-
-        {/* TikTok Embed */}
-        {socialTab === "tiktok" && (
-          <div className="p-6 flex flex-col items-center gap-4 text-center">
-            <div className="w-20 h-20 rounded-full bg-neutral-200 dark:bg-neutral-700 p-0.5">
-              <img src={logo} alt="" className="w-full h-full rounded-full object-cover border-2 border-white" />
-            </div>
-            <div>
-              <p className="font-semibold text-neutral-800 dark:text-neutral-200">@arifpake.ef</p>
-              <p className="text-sm text-neutral-500">Arif Rahman</p>
-            </div>
-            <a
-              href="https://www.tiktok.com/@arifpake.ef"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 py-2 rounded-lg bg-neutral-800 dark:bg-white text-white dark:text-neutral-900 text-sm font-medium transition-colors hover:opacity-80"
-            >
-              Follow @arifpake.ef
-            </a>
-            <p className="text-xs text-neutral-500">
-              Klik tombol di atas untuk buka TikTok
-            </p>
-          </div>
-        )}
-      </div>
-
-      {/* Feed Posts */}
-      <h2 className="text-sm font-semibold text-neutral-800 dark:text-neutral-200 mb-4">Latest Updates</h2>
       <div className="flex flex-col gap-6">
         {posts.map((post, idx) => (
           <motion.div
