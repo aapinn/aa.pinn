@@ -2,15 +2,14 @@
 import { jsx as _jsx } from "react/jsx-runtime";
 import { cn } from "../../../lib/utils";
 import { useState, useEffect, useRef, useCallback, } from "react";
-export var StarsBackground = function (_a) {
-    var _b = _a.starDensity, starDensity = _b === void 0 ? 0.00015 : _b, _c = _a.allStarsTwinkle, allStarsTwinkle = _c === void 0 ? true : _c, _d = _a.twinkleProbability, twinkleProbability = _d === void 0 ? 0.7 : _d, _e = _a.minTwinkleSpeed, minTwinkleSpeed = _e === void 0 ? 0.5 : _e, _f = _a.maxTwinkleSpeed, maxTwinkleSpeed = _f === void 0 ? 1 : _f, className = _a.className;
-    var _g = useState([]), stars = _g[0], setStars = _g[1];
-    var canvasRef = useRef(null);
-    var generateStars = useCallback(function (width, height) {
-        var area = width * height;
-        var numStars = Math.floor(area * starDensity);
-        return Array.from({ length: numStars }, function () {
-            var shouldTwinkle = allStarsTwinkle || Math.random() < twinkleProbability;
+export const StarsBackground = ({ starDensity = 0.00015, allStarsTwinkle = true, twinkleProbability = 0.7, minTwinkleSpeed = 0.5, maxTwinkleSpeed = 1, className, }) => {
+    const [stars, setStars] = useState([]);
+    const canvasRef = useRef(null);
+    const generateStars = useCallback((width, height) => {
+        const area = width * height;
+        const numStars = Math.floor(area * starDensity);
+        return Array.from({ length: numStars }, () => {
+            const shouldTwinkle = allStarsTwinkle || Math.random() < twinkleProbability;
             return {
                 x: Math.random() * width,
                 y: Math.random() * height,
@@ -29,25 +28,25 @@ export var StarsBackground = function (_a) {
         minTwinkleSpeed,
         maxTwinkleSpeed,
     ]);
-    useEffect(function () {
-        var updateStars = function () {
+    useEffect(() => {
+        const updateStars = () => {
             if (canvasRef.current) {
-                var canvas = canvasRef.current;
-                var ctx = canvas.getContext("2d");
+                const canvas = canvasRef.current;
+                const ctx = canvas.getContext("2d");
                 if (!ctx)
                     return;
-                var _a = canvas.getBoundingClientRect(), width = _a.width, height = _a.height;
+                const { width, height } = canvas.getBoundingClientRect();
                 canvas.width = width;
                 canvas.height = height;
                 setStars(generateStars(width, height));
             }
         };
         updateStars();
-        var resizeObserver = new ResizeObserver(updateStars);
+        const resizeObserver = new ResizeObserver(updateStars);
         if (canvasRef.current) {
             resizeObserver.observe(canvasRef.current);
         }
-        return function () {
+        return () => {
             if (canvasRef.current) {
                 resizeObserver.unobserve(canvasRef.current);
             }
@@ -60,20 +59,20 @@ export var StarsBackground = function (_a) {
         maxTwinkleSpeed,
         generateStars,
     ]);
-    useEffect(function () {
-        var canvas = canvasRef.current;
+    useEffect(() => {
+        const canvas = canvasRef.current;
         if (!canvas)
             return;
-        var ctx = canvas.getContext("2d");
+        const ctx = canvas.getContext("2d");
         if (!ctx)
             return;
-        var animationFrameId;
-        var render = function () {
+        let animationFrameId;
+        const render = () => {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            stars.forEach(function (star) {
+            stars.forEach((star) => {
                 ctx.beginPath();
                 ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
-                ctx.fillStyle = "rgba(255, 255, 255, ".concat(star.opacity, ")");
+                ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
                 ctx.fill();
                 if (star.twinkleSpeed !== null) {
                     star.opacity =
@@ -84,7 +83,7 @@ export var StarsBackground = function (_a) {
             animationFrameId = requestAnimationFrame(render);
         };
         render();
-        return function () {
+        return () => {
             cancelAnimationFrame(animationFrameId);
         };
     }, [stars]);

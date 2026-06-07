@@ -2,24 +2,23 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import { useScroll, useTransform, motion, } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-export var Timeline = function (_a) {
-    var data = _a.data;
-    var ref = useRef(null);
-    var containerRef = useRef(null);
-    var _b = useState(0), height = _b[0], setHeight = _b[1];
-    useEffect(function () {
+export const Timeline = ({ data }) => {
+    const ref = useRef(null);
+    const containerRef = useRef(null);
+    const [height, setHeight] = useState(0);
+    useEffect(() => {
         if (ref.current) {
-            var rect = ref.current.getBoundingClientRect();
+            const rect = ref.current.getBoundingClientRect();
             setHeight(rect.height);
         }
     }, [ref]);
-    var scrollYProgress = useScroll({
+    const { scrollYProgress } = useScroll({
         target: containerRef,
         offset: ["start 10%", "end 50%"],
-    }).scrollYProgress;
-    var heightTransform = useTransform(scrollYProgress, [0, 1], [0, height]);
-    var opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
-    return (_jsxs("div", { className: "w-full dark:bg-transparent font-sans border rounded-xl md:px-10", ref: containerRef, children: [_jsxs("div", { className: "max-w-7xl mx-auto py-5 px-4 md:px-8 lg:px-10", children: [_jsx("h2", { className: "text-lg md:text-4xl mb-4 text-black dark:text-white max-w-4xl", children: "Changelog from my Journey" }), _jsx("p", { className: "text-neutral-700 dark:text-neutral-300 text-sm md:text-base max-w-sm", children: "I've been working on five companies. Here's a timeline of my journey." })] }), _jsxs("div", { ref: ref, className: "relative max-w-7xl mx-auto pb-20", children: [data.map(function (item, index) { return (_jsxs("div", { className: "flex justify-start pt-10 md:pt-40 md:gap-10", children: [_jsxs("div", { className: "sticky flex flex-col md:flex-row z-40 items-center top-40 self-start max-w-xs lg:max-w-sm md:w-full", children: [_jsx("div", { className: "h-10 absolute left-3 md:left-3 w-10 rounded-full bg-white dark:bg-black flex items-center justify-center", children: _jsx("div", { className: "h-4 w-4 rounded-full bg-neutral-200 dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 p-2" }) }), _jsx("h3", { className: "hidden md:block text-xl md:pl-20 md:text-5xl font-bold text-neutral-500 dark:text-neutral-500 ", children: item.title })] }), _jsxs("div", { className: "relative pl-20 pr-4 md:pl-4 w-full", children: [_jsx("h3", { className: "md:hidden block text-2xl mb-4 text-left font-bold text-neutral-500 dark:text-neutral-500", children: item.title }), item.content, " "] })] }, index)); }), _jsx("div", { style: {
+    });
+    const heightTransform = useTransform(scrollYProgress, [0, 1], [0, height]);
+    const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
+    return (_jsxs("div", { className: "w-full dark:bg-transparent font-sans border rounded-xl md:px-10", ref: containerRef, children: [_jsxs("div", { className: "max-w-7xl mx-auto py-5 px-4 md:px-8 lg:px-10", children: [_jsx("h2", { className: "text-lg md:text-4xl mb-4 text-black dark:text-white max-w-4xl", children: "Changelog from my Journey" }), _jsx("p", { className: "text-neutral-700 dark:text-neutral-300 text-sm md:text-base max-w-sm", children: "I've been working on five companies. Here's a timeline of my journey." })] }), _jsxs("div", { ref: ref, className: "relative max-w-7xl mx-auto pb-20", children: [data.map((item, index) => (_jsxs("div", { className: "flex justify-start pt-10 md:pt-40 md:gap-10", children: [_jsxs("div", { className: "sticky flex flex-col md:flex-row z-40 items-center top-40 self-start max-w-xs lg:max-w-sm md:w-full", children: [_jsx("div", { className: "h-10 absolute left-3 md:left-3 w-10 rounded-full bg-white dark:bg-black flex items-center justify-center", children: _jsx("div", { className: "h-4 w-4 rounded-full bg-neutral-200 dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 p-2" }) }), _jsx("h3", { className: "hidden md:block text-xl md:pl-20 md:text-5xl font-bold text-neutral-500 dark:text-neutral-500 ", children: item.title })] }), _jsxs("div", { className: "relative pl-20 pr-4 md:pl-4 w-full", children: [_jsx("h3", { className: "md:hidden block text-2xl mb-4 text-left font-bold text-neutral-500 dark:text-neutral-500", children: item.title }), item.content, " "] })] }, index))), _jsx("div", { style: {
                             height: height + "px",
                         }, className: "absolute md:left-8 left-8 top-0 overflow-hidden w-[2px] bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent from-[0%] via-neutral-200 dark:via-neutral-700 to-transparent to-[99%]  [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)] ", children: _jsx(motion.div, { style: {
                                 height: heightTransform,

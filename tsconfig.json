@@ -1,9 +1,10 @@
 {
     "compilerOptions": {
       "esModuleInterop": true,
-      "module": "ESNext",
-      "moduleResolution": "node",
+      "module": "NodeNext",
+      "moduleResolution": "nodenext",
       "jsx": "react-jsx",
+      "ignoreDeprecations": "6.0",
       // ...
       "baseUrl": ".",
       "paths": {

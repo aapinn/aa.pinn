@@ -1,8 +1,9 @@
 {
   "compilerOptions": {
+    "ignoreDeprecations": "6.0",
     "esModuleInterop": true,
     "module": "ESNext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "jsx": "react-jsx",
     // ...
     "baseUrl": ".",

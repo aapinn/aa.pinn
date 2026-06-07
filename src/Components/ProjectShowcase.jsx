@@ -51,7 +51,6 @@ function ProjectShowcase() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: idx * 0.08 }}
-            whileHover={{ y: -6, scale: 1.02 }}
             className="snap-start shrink-0 w-[280px] sm:w-[300px] group/card"
           >
             <div className="relative h-40 rounded-xl overflow-hidden border border-neutral-200 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-800">

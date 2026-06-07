@@ -1,9 +1,8 @@
 import { jsx as _jsx } from "react/jsx-runtime";
 import { cn } from "@/lib/utils";
-var AnimatedShinyText = function (_a) {
-    var children = _a.children, className = _a.className, _b = _a.shimmerWidth, shimmerWidth = _b === void 0 ? 100 : _b;
+const AnimatedShinyText = ({ children, className, shimmerWidth = 100, }) => {
     return (_jsx("p", { style: {
-            "--shiny-width": "".concat(shimmerWidth, "px"),
+            "--shiny-width": `${shimmerWidth}px`,
         }, className: cn("mx-auto max-w-md text-neutral-600/70 dark:text-neutral-400/70", 
         // Shine effect
         "animate-shiny-text bg-clip-text bg-no-repeat [background-position:0_0] [background-size:var(--shiny-width)_100%] [transition:background-position_1s_cubic-bezier(.6,.6,0,1)_infinite]", 
