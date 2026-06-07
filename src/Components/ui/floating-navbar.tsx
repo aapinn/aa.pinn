@@ -1,6 +1,6 @@
 "use client";
 import { NavLink } from "react-router-dom";
-import DarkModeToggle from "../../Pages/components/DarkModeToggle";
+import DarkModeToggle from "../../Pages/components/DarkModeToggle.jsx";
 
 const cn = (...classes) => classes.filter(Boolean).join(" ");
 
@@ -25,7 +25,7 @@ export const FloatingNav = ({ navItems, className }) => {
         </NavLink>
       ))}
       <div className="pl-7 block md:hidden">
-        {/* <DarkModeToggle /> */}
+        <DarkModeToggle />
       </div>
     </div>
   );
