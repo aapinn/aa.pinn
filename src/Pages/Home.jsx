@@ -6,7 +6,7 @@ import { TbArticle } from "react-icons/tb";
 import { VscGithub } from "react-icons/vsc";
 import { BsLightning } from "react-icons/bs";
 import BentoGridComponent from "./components/BentoGridComponent";
-import AnimatedCarousel from "../Components/AnimatedCarousel"
+import ProjectShowcase from "../Components/ProjectShowcase"
 import StatsCounter from "./components/StatsCounter";
 import GitHubProjects from "./components/GitHubProjects";
 
@@ -31,7 +31,7 @@ const Home = () => {
             className={"border-t mt-5 py-4"}
             showCards={false}
           />
-          <AnimatedCarousel/>
+          <ProjectShowcase/>
 
           <div className="my-8 p-4 rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white/30 dark:bg-neutral-900/30">
             <div className="flex items-center gap-2 mb-2">

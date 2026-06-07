@@ -1,6 +1,6 @@
 import Content from "../Components/Content";
 import GitHubProjects from "./components/GitHubProjects";
-import AnimatedCarousel from "../Components/AnimatedCarousel";
+import ProjectShowcase from "../Components/ProjectShowcase";
 import { itemCards } from "../data";
 import { motion } from "framer-motion";
 import { GoProjectSymlink } from "react-icons/go";
@@ -79,7 +79,7 @@ const Projects = () => {
       {/* Carousel */}
       <div className="mb-8">
         <h3 className="text-sm font-semibold text-neutral-800 dark:text-neutral-200 mb-4">All Projects</h3>
-        <AnimatedCarousel />
+        <ProjectShowcase />
       </div>
 
       {/* GitHub Repos */}
