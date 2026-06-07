@@ -124,45 +124,45 @@ export const Navbar = (props) => {
 export const itemCards = [
     {
         id: 1,
-        title: 'My Portfolio V2',
-        date: 'Built with Vite + React + Tailwind',
-        icon: portfolioV2,
-        path:'latestArticle/PortfolioV2'
+        title: 'Portfolio V3',
+        date: 'React + Tailwind • Full Features',
+        icon: portfolioV3,
+        path:'latestArticle/PortfolioV3'
     },
     {
         id: 2,
         title: 'Catatan Belanja',
-        date: 'Shopping note web app',
+        date: 'Shopping Note • Web App',
         icon: catatanBelanja,
         path:'latestArticle/CatatanBelanja'
     },
     {
         id: 3,
-        title: 'My Portfolio V3',
-        date: 'Current portfolio with full features',
-        icon: portfolioV3,
-        path:'latestArticle/PortfolioV3'
-    },
-    {
-        id: 4,
-        title: 'Catatan Belanja',
-        date: 'Website for note your activity',
-        icon: catatanBelanja,
-        path:'latestArticle/CatatanBelanja'
-    },
-    {
-        id: 5,
         title: 'Portfolio V2',
-        date: 'My portfolio, with Vite + React',
+        date: 'Vite + React • Responsive',
         icon: portfolioV2,
         path:'latestArticle/PortfolioV2'
     },
     {
+        id: 4,
+        title: 'Giant Experience',
+        date: 'Internship • Retail Management',
+        icon: giant,
+        path:'experience/Giant'
+    },
+    {
+        id: 5,
+        title: 'Indomaret Dashboard',
+        date: 'Store Ops • Management',
+        icon: indomaret,
+        path:'experience/Indomaret'
+    },
+    {
         id: 6,
-        title: 'Portfolio V3',
-        date: 'Present portfolio using React + Tailwind',
-        icon: portfolioV3,
-        path:'latestArticle/PortfolioV3'
+        title: 'Ace Hardware',
+        date: 'Sales & Customer Service',
+        icon: aceHardware,
+        path:'experience/AceHardware'
     }
   ];
   

@@ -1,31 +1,12 @@
-import TextDescription from "./components/TextDescription"
-import { RiShoppingBag3Line, RiArrowDownSLine, RiMapPinLine } from "react-icons/ri";
-import { TbHeart, TbCode, TbSparkles, TbSchool } from "react-icons/tb";
-import { WorkExperience, educationData } from "../data"; 
+import { RiShoppingBag3Line, RiMapPinLine } from "react-icons/ri";
+import { TbHeart, TbCode, TbSparkles, TbSchool, TbBriefcase } from "react-icons/tb";
+import { educationData, WorkExperience } from "../data";
 import Content from "../Components/Content";
-import image1 from "../image/giant.png"
-import image2 from "../image/albany.png"
-import image3 from "../image/indomaret.png"
-import image4 from "../image/aceHardware.png"
-import image5 from "../image/ahi.png"
-import image6 from "../image/service/powerOfCommunication.jpeg"
-import image7 from "../image/azko.png"
-import {   
-    IconArrowWaveRightUp,
-    IconClipboardCopy,
-    IconFileBroken,
-    IconSignature,
-    IconTableColumn, } from "@tabler/icons-react";
-import TimelineComponent from "./components/TimelineComponent";
-import CardNextUi from "./components/CardNextUi";
 import SkillBar from "./components/SkillBar";
 import FunFacts from "./components/FunFacts";
 import { motion } from "framer-motion";
 import { MdVerified } from "react-icons/md";
-import { VscGithub } from "react-icons/vsc";
 import logo from "../image/LogoBrand.png"
-
-const dataimages = [image1, image2, image3, image4, image5, image6, image7];
 
 const About = () => {
     return (
@@ -157,80 +138,72 @@ const About = () => {
           </div>
 
           {/* Experience */}
-          <Content
-            icon={<RiShoppingBag3Line />}
-            text={'My Experience'}
-            subtitle={'My professional career journey'}
-            Button={<div className="items-center hidden sm:flex"><RiArrowDownSLine className="border rounded-xl" /> Download My Portfolio</div>}
-            item={[WorkExperience]}
-            showCards={false}
-            link='https://www.google.com'
-            className={"border-t my-5 py-4"}
-          />
-          <TimelineComponent/>
-          <CardNextUi/>
+          <div className="border-t my-5 py-4">
+            <div className="flex items-center gap-2 mb-2">
+              <RiShoppingBag3Line className="text-neutral-700 dark:text-neutral-300" />
+              <h3 className="text-lg font-semibold text-neutral-800 dark:text-neutral-200">My Experience</h3>
+            </div>
+            <p className="text-xs text-neutral-500 dark:text-neutral-400 mb-6">Where I've grown and contributed</p>
+
+            <div className="relative">
+              {/* Timeline line */}
+              <div className="absolute left-4 top-2 bottom-2 w-0.5 bg-gradient-to-b from-purple-500 via-pink-500 to-orange-500 rounded-full" />
+
+              {WorkExperience.map((exp, idx) => (
+                <motion.div
+                  key={exp.id}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  className="relative flex gap-4 mb-6 last:mb-0"
+                >
+                  {/* Dot */}
+                  <div className="relative z-10 mt-1">
+                    <div className="w-8 h-8 rounded-full bg-white dark:bg-neutral-800 border-2 border-purple-400 dark:border-purple-500 flex items-center justify-center overflow-hidden shadow-sm">
+                      <img src={exp.icon} alt="" className="w-5 h-5 object-contain" />
+                    </div>
+                  </div>
+
+                  {/* Card */}
+                  <div className="flex-1 p-4 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white/50 dark:bg-neutral-900/50 backdrop-blur-sm hover:shadow-md hover:border-purple-300 dark:hover:border-purple-600 transition-all duration-300">
+                    <div className="flex items-start justify-between gap-2">
+                      <div>
+                        <h4 className="text-sm font-bold text-neutral-800 dark:text-neutral-200">{exp.title}</h4>
+                        <p className="text-[11px] text-purple-500 dark:text-purple-400 font-medium mt-0.5">
+                          {exp.id === 5 ? 'Sales Executive' : exp.id === 4 ? 'Sales Associate' : exp.id === 3 ? 'Store Senior Leader' : exp.id === 2 ? 'Store Crew' : 'Intern'}
+                        </p>
+                      </div>
+                      <span className="shrink-0 text-[10px] px-2 py-1 rounded-full bg-purple-100 dark:bg-purple-900/40 text-purple-600 dark:text-purple-300 font-medium">
+                        {exp.date}
+                      </span>
+                    </div>
+                    <p className="text-xs text-neutral-600 dark:text-neutral-400 mt-2 leading-relaxed">
+                      {exp.id === 5 && "Delivering exceptional service and solutions at Pt Aspirasi Hidup Indonesia, focusing on customer needs and building lasting relationships."}
+                      {exp.id === 4 && "Providing top-tier service at Pt Ace Hardware Indonesia, helping customers find the perfect tools and solutions for their projects."}
+                      {exp.id === 3 && "Led store operations and teams at Indomaret, mastering inventory management, cost control, and team leadership."}
+                      {exp.id === 2 && "Started the retail journey at Pt Albany Corona Lestari, learning the ropes of customer service and store operations."}
+                      {exp.id === 1 && "First step into the professional world — an internship at Pt Giant Tbk that sparked my passion for working with people."}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            <div className="mt-6 text-center">
+              <a
+                href="https://www.google.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-xs text-purple-500 hover:text-purple-600 dark:text-purple-400 dark:hover:text-purple-300 transition-colors"
+              >
+                <TbBriefcase className="text-sm" />
+                Download My Portfolio
+              </a>
+            </div>
+          </div>
         </div>
     )
-}
-
-const Skeleton = ({images}) => (
-    <div
-    style={{  
-      backgroundImage: `url(${images})`,
-      height: '300px', 
-      borderRadius:`10px`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',}}>
-    </div>)
-const items = [
-    {
-      key:1,
-      title: "Pt Giant Tbk",
-      description: "Explore the birth of groundbreaking ideas and inventions.",
-      header: <Skeleton images={dataimages[0]}/>,
-      icon: <IconClipboardCopy className="h-4 w-4 text-neutral-500" />,
-      path:'Giant'
-    },
-    {
-      key:2,
-      title: "Pt Albany Corona Lestari",
-      description: "Dive into the transformative power of technology.",
-      header: <Skeleton images={dataimages[1]} />,
-      icon: <IconFileBroken className="h-4 w-4 text-neutral-500" />,
-      path:'Pt Albany Corona Lestari'
-    },
-    {
-      key:3,
-      title: "Pt Indomarco Prismatama Tbk",
-      description: "Discover the beauty of thoughtful and functional design.",
-      header: <Skeleton images={dataimages[2]} />,
-      icon: <IconSignature className="h-4 w-4 text-neutral-500" />,
-      path:'Pt Indomarco Prismatama Tbk'
-    },
-    {
-      key:4,
-      title: "Pt Ace Hardware Indonesia Tbk",
-      description: "Understand the impact of effective communication in our lives.",
-      header: <Skeleton images={dataimages[3]} />,
-      icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
-      path:'Pt Ace Hardware Indonesia Tbk'
-    },
-    {
-      key:5,
-      title: "Pt Aspirasi Hidup Indonesia",
-      description: "Join the quest for understanding and enlightenment.",
-      header: <Skeleton images={dataimages[4]} />,
-      icon: <IconArrowWaveRightUp className="h-4 w-4 text-neutral-500" />,
-      path:'Pt Asirasi hidup Indonesia'
-    }, 
-    {
-      key:6,
-      title: "Pt az·ko Indonesia Tbk",
-      description: "Understand the impact of effective communication in our lives.",
-      header: <Skeleton images={dataimages[6]} />,
-      icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
-      path:'Pt az·ko Indonesia Tbk'
-    }
-  ];
+  }
 
 export default About

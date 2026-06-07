@@ -3,30 +3,33 @@ import CardComponent from "../Pages/components/CardComponent"
 import { itemCards } from "../data"
 
 function DragCarousel() {
+  const duplicated = [...itemCards, ...itemCards, ...itemCards]
+
   return (
-    <motion.div
-      className="cursor-grab overflow-hidden w-full"
-      whileTap={{ cursor: "grabbing" }}
-    >
+    <div className="relative overflow-hidden w-full">
       <motion.div
-        className="flex overflow-x-auto scroll-smooth scrollbar-hide" // ✅ smooth scroll + hide scrollbar
-        animate={{
-          x: [0, -20, 0], // gerakan ketarik ke kiri 20px lalu balik
-        }}
-        transition={{
-          duration: 1,
-          repeat: Infinity,
-          repeatDelay: 3,
-          ease: "easeInOut",
-        }}
+        className="flex cursor-grab"
+        whileTap={{ cursor: "grabbing" }}
       >
-        {itemCards.map((card, i) => (
-          <div key={i} className="w-72 shrink-0 p-2">
-            <CardComponent cards={[card]} />
-          </div>
-        ))}
+        <motion.div
+          className="flex"
+          animate={{
+            x: ["0%", "-33.33%"],
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+        >
+          {duplicated.map((card, i) => (
+            <div key={i} className="w-72 shrink-0 p-2 select-none">
+              <CardComponent cards={[card]} />
+            </div>
+          ))}
+        </motion.div>
       </motion.div>
-    </motion.div>
+    </div>
   )
 }
 
