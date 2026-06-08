@@ -14,7 +14,7 @@ function ContentComponent({icon, text, subtitle, Button,link, showCards = true, 
         subtitle={subtitle}
         Button={Button}
         link={link}/>
-        <div id='wrapper' className='p-2 flex gap-5 justify-between overflow-scroll h-fit scrollbar-hide'>
+        <div id='wrapper' className=' flex gap-5 justify-between overflow-scroll h-fit scrollbar-hide'>
           {showCards && (
             <>
             <CardComponent cards={[itemCards[1]]}/>

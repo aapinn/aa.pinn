@@ -40,7 +40,7 @@ const Projects = () => {
       {/* Live Projects */}
       <div className="mb-8">
         <h3 className="text-sm font-semibold text-neutral-800 dark:text-neutral-200 mb-4 flex items-center gap-2">
-          <span className="text-green-500 w-2 h-2 rounded-full bg-green-500 inline-block animate-pulse" />
+          <span className="text-green-500 w-2 my-3 h-2 rounded-full bg-green-500 inline-block animate-pulse" />
           Live & Deployed
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">

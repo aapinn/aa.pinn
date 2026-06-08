@@ -15,7 +15,7 @@ const Home = () => {
         <div data-aos='fade-down' data-aos-duration='1000'>
           <Header/>
 
-          <div className="my-8 p-4 rounded-2xl bg-gradient-to-r from-purple-500/10 via-pink-500/10 to-orange-500/10 border border-purple-200 dark:border-purple-800/30">
+          <div className="my-8 p-4 rounded-2xl bg-gradient-to-r from-purple-500/5 via-pink-500/5 to-orange-500/10 border border-purple-200 dark:border-purple-800/30">
             <div className="flex items-center gap-2 mb-2">
               <BsLightning className="text-purple-500" />
               <h3 className="text-sm font-semibold text-neutral-800 dark:text-neutral-200">Quick Snapshot</h3>

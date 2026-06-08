@@ -50,7 +50,7 @@ const Dashboard = () => {
       />
 
       {/* GitHub Stats Grid */}
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 my-6">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 my-4">
         {statsCards.map((stat, idx) => (
           <motion.div
             key={idx}
@@ -81,7 +81,7 @@ const Dashboard = () => {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="p-6 rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white/40 dark:bg-neutral-900/40 backdrop-blur-sm mb-6"
+        className="p-6 rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white/40 dark:bg-neutral-900/40 backdrop-blur-sm mb-4"
       >
         <div className="flex flex-col sm:flex-row items-center gap-4">
           {githubData?.avatar_url && (
@@ -92,7 +92,7 @@ const Dashboard = () => {
             />
           )}
           <div className="text-center sm:text-left">
-            <div className="flex items-center gap-2">
+            <div className="flex justify-center sm:justify-start items-center gap-2">
               <VscGithub className="text-xl text-neutral-700 dark:text-neutral-300" />
               <h3 className="text-lg font-semibold text-neutral-800 dark:text-neutral-200">
                 {githubData?.login || "aapinn"}

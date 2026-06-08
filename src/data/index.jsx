@@ -207,10 +207,10 @@ export const WorkExperience = [
 export const educationData = [
   {
     id: 1,
-    school: "SMK Negeri 1 Kota Bekasi",
-    major: "Multimedia",
+    school: "SMK Bussines and Technology Bekasi",
+    major: "Manajement Technology",
     year: "2015 - 2018",
-    desc: "Learned the fundamentals of design, video editing, and basic programming"
+    desc: "Learned the fundamentals of business, technology, and management principles, with a focus on practical skills and real-world applications"
   },
   {
     id: 2,

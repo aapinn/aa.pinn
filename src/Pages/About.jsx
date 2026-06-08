@@ -18,16 +18,8 @@ const About = () => {
             transition={{ duration: 0.5 }}
             className="flex flex-col md:flex-row items-center gap-6 p-6 mb-6 rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-gradient-to-br from-purple-50 to-pink-50 dark:from-neutral-900 dark:to-neutral-800"
           >
-            <div className="relative shrink-0">
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full blur-xl opacity-50 animate-pulse" />
-              <img
-                src={logo}
-                alt="Arif Rahman"
-                className="w-28 h-28 rounded-full border-4 border-white dark:border-neutral-700 shadow-lg relative"
-              />
-            </div>
-            <div className="text-center md:text-left">
-              <h2 className="text-2xl font-bold text-neutral-800 dark:text-neutral-100 flex items-center justify-center md:justify-start gap-2">
+            <div className="text-center">
+              <h2 className="text-xl font-bold text-neutral-800 dark:text-neutral-100 flex items-center justify-center md:justify-start gap-2">
                 Arif Rahman Hidayat
                 <MdVerified className="text-sky-500" />
               </h2>
@@ -43,7 +35,7 @@ const About = () => {
           {/* About Bio with fun styling */}
           <div className="flex flex-col gap-4">
             <Content
-              className={'pb-2 border-b border-dashed'}
+              className={'pb-2 border-b border-dashed border-neutral-300 dark:border-neutral-600'}
               text={'About'}
               subtitle={'The story behind the code'}
               showCards={false}
@@ -138,7 +130,7 @@ const About = () => {
           </div>
 
           {/* Experience */}
-          <div className="border-t my-5 py-4">
+          <div className="border-t mt-5 pt-4">
             <div className="flex items-center gap-2 mb-2">
               <RiShoppingBag3Line className="text-neutral-700 dark:text-neutral-300" />
               <h3 className="text-lg font-semibold text-neutral-800 dark:text-neutral-200">My Experience</h3>
@@ -195,9 +187,9 @@ const About = () => {
                 href="https://www.google.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-xs text-purple-500 hover:text-purple-600 dark:text-purple-400 dark:hover:text-purple-300 transition-colors"
+                className="inline-flex items-center gap-1.5 text-xs text-purple-500 hover:text-purple-600 dark:text-purple-400 dark:hover:text-purple-300 transition-colors border border-purple-500 dark:border-purple-400 rounded-full px-4 py-2 font-medium"
               >
-                <TbBriefcase className="text-sm" />
+                <TbBriefcase className="text-sm " />
                 Download My Portfolio
               </a>
             </div>

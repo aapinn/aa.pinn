@@ -1,10 +1,9 @@
 "use client";
 import { NavLink } from "react-router-dom";
-import DarkModeToggle from "../../Pages/components/DarkModeToggle.jsx";
+const cn = (...classes: Array<string | undefined | null | false>) =>
+  classes.filter((c): c is string => Boolean(c)).join(" ");
 
-const cn = (...classes) => classes.filter(Boolean).join(" ");
-
-export const FloatingNav = ({ navItems, className }) => {
+export const FloatingNav = ({ navItems, className } : { navItems: any[], className?: string }) => {
   return (
     <div
       className={cn(
@@ -24,9 +23,7 @@ export const FloatingNav = ({ navItems, className }) => {
           <span className="hidden md:block text-sm">{navItem.name}</span>
         </NavLink>
       ))}
-      <div className="pl-7 block md:hidden">
-        <DarkModeToggle />
-      </div>
+
     </div>
   );
 };

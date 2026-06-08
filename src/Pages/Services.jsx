@@ -4,6 +4,7 @@ import { servicesData } from "../data";
 import { RiServiceLine } from "react-icons/ri";
 import { TbArrowRight, TbCheck } from "react-icons/tb";
 import Typewriter from "./components/Typewriter";
+import { NavLink } from "react-router-dom";
 
 const Services = () => {
     return (
@@ -70,7 +71,7 @@ const Services = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mt-10 p-6 rounded-2xl bg-gradient-to-r from-purple-500/10 via-pink-500/10 to-orange-500/10 border border-purple-200 dark:border-purple-800/30 text-center"
+            className="mt-5 p-6 rounded-2xl bg-gradient-to-r from-purple-500/10 via-pink-500/10 to-orange-500/10 border border-purple-200 dark:border-purple-800/30 text-center"
           >
             <h3 className="text-lg font-semibold text-neutral-800 dark:text-neutral-200 mb-2">
               Let's Work Together! 🚀
@@ -78,12 +79,13 @@ const Services = () => {
             <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-4">
               Have a project in mind? I'd love to hear about it!
             </p>
-            <a
-              href="/contact"
-              className="inline-flex items-center gap-2 px-6 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-xl text-sm font-medium hover:shadow-lg hover:shadow-purple-500/30 duration-300"
+            <NavLink
+              to="/contact"
+              className="inline-flex items-center gap-2 px-8 py-2 bg-purple-500 text-white rounded-xl hover:bg-purple-600 duration-300 text-sm font-medium"
             >
               Get in Touch <TbArrowRight />
-            </a>
+            </NavLink>
+
           </motion.div>
         </div>
     )

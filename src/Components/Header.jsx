@@ -12,7 +12,7 @@ const Header =() => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 py-6 border-b border-dashed border-neutral-300 dark:border-neutral-600">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 py-6 mb-3 border-b border-dashed border-neutral-300 dark:border-neutral-600">
             <div>
               <div className="flex items-center gap-2 text-sm text-purple-500 dark:text-purple-400 mb-2">
                 <TbMoodSmile className="text-lg" />

@@ -61,7 +61,7 @@ function Blog() {
       {/* Header */}
       <div className="mb-8">
         <h1 className="text-2xl font-bold text-neutral-800 dark:text-neutral-100">Catatan</h1>
-        <p className="text-sm text-neutral-500 mt-1">Cerita, tips, dan pembelajaran sepanjang perjalanan</p>
+        <p className="text-sm text-neutral-500 my-3 ">Cerita, tips, dan pembelajaran sepanjang perjalanan</p>
       </div>
 
       {/* Featured Card */}
