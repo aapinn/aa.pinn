@@ -37,6 +37,21 @@ const DynamicTitle = () => {
       case '/latestArticle/PortfolioV2':
         document.title = 'Portfolio V2 - Arif Site';
         break;
+      case '/latestArticle/PortfolioV3':
+        document.title = 'Portfolio V3 - Arif Site';
+        break;
+      case '/experience/Giant':
+        document.title = 'Giant Experience - Arif Site';
+        break;
+      case '/experience/Indomaret':
+        document.title = 'Indomaret Experience - Arif Site';
+        break;
+      case '/experience/AceHardware':
+        document.title = 'Ace Hardware - Arif Site';
+        break;
+      case '/experience/Azko':
+        document.title = 'AZKO Experience - Arif Site';
+        break;
       default:
         document.title = 'Page Not Found - Arif Site';
         break;

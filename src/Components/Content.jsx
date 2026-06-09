@@ -23,6 +23,7 @@ function ContentComponent({icon, text, subtitle, Button,link, showCards = true, 
             <CardComponent cards={[itemCards[3]]}/>
             <CardComponent cards={[itemCards[4]]}/>
             <CardComponent cards={[itemCards[5]]}/>
+            <CardComponent cards={[itemCards[6]]}/>
             </>
           )}
 

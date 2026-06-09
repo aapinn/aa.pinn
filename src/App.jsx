@@ -13,6 +13,11 @@ import Dashboard from './Pages/Dashboard'
 import NotFound from './Pages/NotFound'
 import CatatanBelanja from './Pages/Home/CatatanBelanja'
 import PortfolioV2 from './Pages/Home/PortfolioV2'
+import PortfolioV3 from './Pages/Home/PortfolioV3'
+import Giant from './Pages/Home/Giant'
+import Indomaret from './Pages/Home/Indomaret'
+import AceHardware from './Pages/Home/AceHardware'
+import Azko from './Pages/Home/Azko'
 import DynamicTitle from './Pages/components/DynamicTitle'
 import { ShootingStars } from '../src/Components/ui/shooting-stars'
 import { StarsBackground } from '../src/Components/ui/stars-background'
@@ -57,6 +62,11 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/latestArticle/CatatanBelanja" element={<CatatanBelanja/>}/>
             <Route path="/latestArticle/PortfolioV2" element={<PortfolioV2/>}/>
+            <Route path="/latestArticle/PortfolioV3" element={<PortfolioV3/>}/>
+            <Route path="/experience/Giant" element={<Giant/>}/>
+            <Route path="/experience/Indomaret" element={<Indomaret/>}/>
+            <Route path="/experience/AceHardware" element={<AceHardware/>}/>
+            <Route path="/experience/Azko" element={<Azko/>}/>
             <Route path="/about/Giant" element={<GiantProfile/>}/>
             <Route path="*" element={<NotFound />} />
           </Routes>

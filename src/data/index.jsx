@@ -17,6 +17,7 @@ import albany from "../image/albany.png"
 import indomaret from "../image/indomaret.png"
 import aceHardware from "../image/aceHardware.png"
 import ahi from "../image/ahi.png"
+import azko from "../image/azko.png"
 import { LiaBlogSolid } from "react-icons/lia";
 
 export const navLinks = [
@@ -152,8 +153,8 @@ export const itemCards = [
     },
     {
         id: 5,
-        title: 'Indomaret Dashboard',
-        date: 'Store Ops • Management',
+        title: 'Indomaret Experience',
+        date: 'Store Crew Junior - Senior Leader',
         icon: indomaret,
         path:'experience/Indomaret'
     },
@@ -163,6 +164,13 @@ export const itemCards = [
         date: 'Sales & Customer Service',
         icon: aceHardware,
         path:'experience/AceHardware'
+    },
+    {
+        id: 7,
+        title: 'AZKO Experience',
+        date: 'Advisor • Home Improvement',
+        icon: azko,
+        path:'experience/Azko'
     }
   ];
   

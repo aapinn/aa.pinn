@@ -1,4 +1,5 @@
 import { useRef } from "react"
+import { NavLink } from "react-router-dom"
 import { motion } from "framer-motion"
 import { itemCards } from "../data"
 import { TbArrowLeft, TbArrowRight } from "react-icons/tb"
@@ -8,8 +9,9 @@ const techMap = {
   "Catatan Belanja": ["React", "Vite", "Tailwind"],
   "Portfolio V2": ["Vite", "React", "CSS"],
   "Giant Experience": ["Retail", "Customer Service"],
-  "Indomaret Dashboard": ["Management", "Operations"],
+  "Indomaret Experience": ["Management", "Operations"],
   "Ace Hardware": ["Sales", "Service"],
+  "AZKO Experience": ["Advisor", "Home Improvement"],
 }
 
 function ProjectShowcase() {
@@ -23,7 +25,7 @@ function ProjectShowcase() {
   }
 
   return (
-    <div className="relative group">
+    <div className="relative group my-5">
       {/* Scroll Buttons */}
       <button
         onClick={() => scroll("left")}
@@ -44,37 +46,38 @@ function ProjectShowcase() {
         className="flex overflow-x-auto gap-4 pb-2 snap-x snap-mandatory scrollbar-hide scroll-smooth"
       >
         {itemCards.map((card, idx) => (
-          <motion.a
+          <motion.div
             key={card.id}
-            href={card.path}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: idx * 0.08 }}
             className="snap-start shrink-0 w-[280px] sm:w-[300px] group/card"
           >
-            <div className="relative h-40 rounded-xl overflow-hidden border border-neutral-200 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-800">
-              <div
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover/card:scale-110"
-                style={{ backgroundImage: `url(${card.icon})` }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-              <div className="absolute bottom-3 left-3 right-3">
-                <h4 className="text-sm font-bold text-white drop-shadow-sm">{card.title}</h4>
-                <p className="text-[10px] text-white/80 mt-0.5">{card.date}</p>
+            <NavLink to={card.path} className="block">
+              <div className="relative h-40 rounded-xl overflow-hidden border border-neutral-200 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-800">
+                <div
+                  className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover/card:scale-110"
+                  style={{ backgroundImage: `url(${card.icon})` }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                <div className="absolute bottom-3 left-3 right-3">
+                  <h4 className="text-sm font-bold text-white drop-shadow-sm">{card.title}</h4>
+                  <p className="text-[10px] text-white/80 mt-0.5">{card.date}</p>
+                </div>
               </div>
-            </div>
-            <div className="mt-2 flex flex-wrap gap-1">
-              {(techMap[card.title] || ["React"]).map((tech, i) => (
-                <span
-                  key={i}
-                  className="px-2 py-0.5 text-[10px] rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
-          </motion.a>
+              <div className="mt-2 flex flex-wrap gap-1">
+                {(techMap[card.title] || ["React"]).map((tech, i) => (
+                  <span
+                    key={i}
+                    className="px-2 py-0.5 text-[10px] rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </NavLink>
+          </motion.div>
         ))}
       </div>
     </div>
