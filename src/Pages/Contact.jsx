@@ -177,9 +177,9 @@ const ContactMain = () => (
           </p>
           <div className="space-y-4">
             {[
-              { icon: <TbMail className="text-xl" />, label: "Email", value: "arif@example.com" },
+              { icon: <TbMail className="text-xl" />, label: "Email", value: "arifrh9185@gmail.com" },
               { icon: <TbMapPin className="text-xl" />, label: "Location", value: "Bekasi, Indonesia" },
-              { icon: <TbPhone className="text-xl" />, label: "Phone", value: "+62 xxx-xxxx-xxxx" },
+              { icon: <TbPhone className="text-xl" />, label: "Phone", value: "+62 xxx-xxxx-xxxx (DM Me On Instagram)" },
             ].map((item, idx) => (
               <div key={idx} className="flex items-center gap-3 p-3 rounded-xl bg-white/50 dark:bg-neutral-800/50">
                 <div className="text-purple-500">{item.icon}</div>
@@ -195,7 +195,7 @@ const ContactMain = () => (
             <div className="flex gap-3">
               {[
                 { icon: <TbBrandGithub />, url: "https://github.com/aapinn", label: "GitHub" },
-                { icon: <TbBrandInstagram />, url: "https://www.instagram.com/aaa.pinnn/#", label: "Instagram" },
+                { icon: <TbBrandInstagram />, url: "https://www.instagram.com/__aapinn/#", label: "Instagram" },
                 { icon: <TbBrandFacebook />, url: "https://www.facebook.com/avenged.arifsevenfold", label: "Facebook" },
                 { icon: <TbBrandTiktok />, url: "https://www.tiktok.com/@arifpake.ef?lang=en", label: "TikTok" },
               ].map((social, idx) => (
