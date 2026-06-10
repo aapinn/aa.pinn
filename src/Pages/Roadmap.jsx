@@ -24,7 +24,7 @@ const goals = [
 
 const Roadmap = () => {
   return (
-    <div data-aos='fade-down' data-aos-duration='1000'>
+    <div data-aos='fade-down' data-aos-duration='1000' className="overflow-x-hidden">
       <Content
         icon={<HiOutlineLightBulb />}
         text={'Roadmap'}

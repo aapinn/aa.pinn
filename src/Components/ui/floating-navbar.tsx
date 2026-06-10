@@ -15,8 +15,8 @@ export const FloatingNav = ({ navItems, className } : { navItems: any[], classNa
         <NavLink
           key={`link=${idx}`}
           to={navItem.path}
-          className={cn(
-            "relative hover:scale-150 duration-200 dark:text-neutral-50 items-center flex space-x-1 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500 p-2"
+          className={() => cn(
+            "relative hover:scale-150 duration-200 dark:text-neutral-50 items-center flex space-x-4 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500 p-2"
           )}
         >
           <span className="block md:hidden text-lg">{navItem.icon}</span>
