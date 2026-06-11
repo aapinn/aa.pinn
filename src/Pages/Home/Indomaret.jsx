@@ -1,4 +1,4 @@
-import React from 'react'
+import { Helmet } from 'react-helmet-async'
 import BackButton from '../components/BackButton'
 import ContentComponent from '../../Components/Content'
 import indomaret from '../../image/indomaret.png'
@@ -36,6 +36,12 @@ const growth = [
 function Indomaret() {
   return (
     <div data-aos='fade-down' data-aos-duration='1000' className='space-y-5 md:space-y-7'>
+      <Helmet>
+        <title>Indomaret Experience - Arif Rahman Hidayat</title>
+        <meta name="description" content="Pengalaman 5 tahun Arif Rahman Hidayat di Indomaret - dari Store Crew hingga Senior Leader dengan 3 promosi." />
+        <meta property="og:title" content="Indomaret Experience - Arif Rahman Hidayat" />
+        <meta property="og:description" content="Pengalaman 5 tahun Arif Rahman Hidayat di Indomaret - dari Store Crew hingga Senior Leader." />
+      </Helmet>
       <BackButton/>
       <ContentComponent
         className='pb-2 border-b border-dashed'

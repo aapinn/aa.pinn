@@ -1,4 +1,4 @@
-import React from 'react'
+import { Helmet } from 'react-helmet-async'
 import BackButton from '../components/BackButton'
 import ContentComponent from '../../Components/Content'
 import giant from '../../image/giant.png'
@@ -24,6 +24,12 @@ const memories = [
 function Giant() {
   return (
     <div data-aos='fade-down' data-aos-duration='1000' className='space-y-4 md:space-y-6'>
+      <Helmet>
+        <title>Giant Experience - Arif Rahman Hidayat</title>
+        <meta name="description" content="Pengalaman internship Arif Rahman Hidayat di Giant Supermarket - awal karir di dunia retail dan customer service." />
+        <meta property="og:title" content="Giant Experience - Arif Rahman Hidayat" />
+        <meta property="og:description" content="Pengalaman internship Arif Rahman Hidayat di Giant Supermarket." />
+      </Helmet>
       <BackButton/>
       <ContentComponent
         className='pb-2 border-b border-dashed'

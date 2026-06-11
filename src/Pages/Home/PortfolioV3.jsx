@@ -1,4 +1,4 @@
-import React from 'react'
+import { Helmet } from 'react-helmet-async'
 import BackButton from '../components/BackButton'
 import ContentComponent from '../../Components/Content'
 import portfolioV3 from '../../image/portfolioV3.png'
@@ -24,6 +24,12 @@ const techStack = [
 function PortfolioV3() {
   return (
     <div data-aos='fade-down' data-aos-duration='1000' className='space-y-4 md:space-y-6'>
+      <Helmet>
+        <title>Portfolio V3 - Arif Rahman Hidayat</title>
+        <meta name="description" content="Portfolio V3 - Versi terbaru personal website Arif Rahman Hidayat dengan fitur lengkap, animasi, dan bento layout." />
+        <meta property="og:title" content="Portfolio V3 - Arif Rahman Hidayat" />
+        <meta property="og:description" content="Versi terbaru personal website Arif Rahman Hidayat dengan fitur lengkap." />
+      </Helmet>
       <BackButton/>
       <ContentComponent
         className='pb-2 border-b border-dashed'

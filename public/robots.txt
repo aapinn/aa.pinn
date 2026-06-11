@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://aapinn.vercel.app/sitemap.xml

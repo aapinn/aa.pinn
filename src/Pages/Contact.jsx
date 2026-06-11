@@ -1,7 +1,13 @@
-import { useState } from "react";
+import { Helmet } from 'react-helmet-async'
+import { useState, useRef, useCallback } from "react";
 import ContentComponent from "@/Components/Content";
 import { motion } from "framer-motion";
 import { TbSend, TbMail, TbMapPin, TbPhone, TbBrandGithub, TbBrandInstagram, TbBrandFacebook, TbBrandTiktok, TbCheck, TbHeart } from "react-icons/tb";
+
+const WEB3FORMS_KEY = 'ad38075a-0612-4e8d-af7b-fbfdaa4d8f13';
+const COOLDOWN_SECONDS = 60;
+
+const sanitize = (str) => str.replace(/<[^>]*>/g, '').trim();
 
 const services = [
   'Website design', 'Content creation', 'UX design',
@@ -14,6 +20,9 @@ const ContactForm = () => {
   });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+  const [cooldown, setCooldown] = useState(0);
+  const timerRef = useRef(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -29,23 +38,68 @@ const ContactForm = () => {
     }));
   };
 
+  const startCooldown = useCallback(() => {
+    setCooldown(COOLDOWN_SECONDS);
+    timerRef.current = setInterval(() => {
+      setCooldown(prev => {
+        if (prev <= 1) {
+          clearInterval(timerRef.current);
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+  }, []);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setError('');
+
+    if (cooldown > 0) return;
+
+    if (!formData.name || !formData.email || !formData.message) {
+      setError('Name, email, and message are required.');
+      return;
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      setError('Please enter a valid email address.');
+      return;
+    }
+
     setLoading(true);
     try {
-      const res = await fetch("https://formspree.io/f/mwppwjej", {
+      const payload = {
+        access_key: WEB3FORMS_KEY,
+        name: sanitize(formData.name),
+        email: formData.email,
+        website: sanitize(formData.website),
+        phone: sanitize(formData.phone),
+        message: sanitize(formData.message),
+        services: formData.services.join(', '),
+        subject: `New Contact from ${sanitize(formData.name)}`,
+        from_name: sanitize(formData.name),
+      };
+
+      const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(payload),
       });
-      if (res.ok) {
+
+      const data = await res.json();
+
+      if (data.success) {
         setSubmitted(true);
         setFormData({ name: '', email: '', website: '', phone: '', message: '', services: [] });
+      } else {
+        setError(data.message || 'Something went wrong. Please try again.');
       }
-    } catch (err) {
-      console.error("Form error:", err);
+    } catch {
+      setError('Network error. Please try again later.');
     }
     setLoading(false);
+    startCooldown();
   };
 
   if (submitted) {
@@ -72,6 +126,14 @@ const ContactForm = () => {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
+      <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
+
+      {error && (
+        <div className="p-3 rounded-xl bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 text-xs text-red-600 dark:text-red-400">
+          {error}
+        </div>
+      )}
+
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <input
           type="text"
@@ -80,6 +142,7 @@ const ContactForm = () => {
           value={formData.name}
           onChange={handleChange}
           required
+          maxLength={100}
           className="w-full p-3 border border-neutral-300 dark:border-neutral-600 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent bg-white dark:bg-neutral-800 text-neutral-900 dark:text-white placeholder-neutral-400 dark:placeholder-neutral-500 text-sm duration-300 outline-none"
         />
         <input
@@ -89,6 +152,7 @@ const ContactForm = () => {
           value={formData.email}
           onChange={handleChange}
           required
+          maxLength={200}
           className="w-full p-3 border border-neutral-300 dark:border-neutral-600 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent bg-white dark:bg-neutral-800 text-neutral-900 dark:text-white placeholder-neutral-400 dark:placeholder-neutral-500 text-sm duration-300 outline-none"
         />
         <input
@@ -97,6 +161,7 @@ const ContactForm = () => {
           placeholder="Your Website (optional)"
           value={formData.website}
           onChange={handleChange}
+          maxLength={200}
           className="w-full p-3 border border-neutral-300 dark:border-neutral-600 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent bg-white dark:bg-neutral-800 text-neutral-900 dark:text-white placeholder-neutral-400 dark:placeholder-neutral-500 text-sm duration-300 outline-none"
         />
         <input
@@ -105,6 +170,7 @@ const ContactForm = () => {
           placeholder="Phone number"
           value={formData.phone}
           onChange={handleChange}
+          maxLength={30}
           className="w-full p-3 border border-neutral-300 dark:border-neutral-600 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent bg-white dark:bg-neutral-800 text-neutral-900 dark:text-white placeholder-neutral-400 dark:placeholder-neutral-500 text-sm duration-300 outline-none"
         />
       </div>
@@ -115,6 +181,7 @@ const ContactForm = () => {
         value={formData.message}
         onChange={handleChange}
         required
+        maxLength={5000}
         className="w-full p-3 border border-neutral-300 dark:border-neutral-600 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent bg-white dark:bg-neutral-800 text-neutral-900 dark:text-white placeholder-neutral-400 dark:placeholder-neutral-500 text-sm duration-300 outline-none resize-none"
       />
       <div>
@@ -142,13 +209,15 @@ const ContactForm = () => {
       </div>
       <motion.button
         type="submit"
-        disabled={loading}
+        disabled={loading || cooldown > 0}
         whileHover={{ scale: 1.01 }}
         whileTap={{ scale: 0.99 }}
         className="w-full py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-purple-500/30 duration-300 flex items-center justify-center gap-2 text-sm disabled:opacity-50"
       >
         {loading ? (
           <span className="animate-spin w-4 h-4 border-2 border-white border-t-transparent rounded-full" />
+        ) : cooldown > 0 ? (
+          <><TbSend /> Wait {cooldown}s</>
         ) : (
           <><TbSend /> Send Message</>
         )}
@@ -227,6 +296,13 @@ const ContactMain = () => (
 const Contact = () => {
     return(
         <div data-aos='fade-down' data-aos-duration='1000' className="min-h-screen flex flex-col bg-white dark:bg-transparent">
+            <Helmet>
+              <title>Kontak - Arif Rahman Hidayat</title>
+              <meta name="description" content="Hubungi Arif Rahman Hidayat untuk kolaborasi, proyek, atau sekadar bertanya. Tersedia melalui email, Instagram, dan GitHub." />
+              <meta property="og:title" content="Kontak - Arif Rahman Hidayat" />
+              <meta property="og:description" content="Hubungi Arif Rahman Hidayat untuk kolaborasi, proyek, atau sekadar bertanya." />
+              <meta property="og:url" content="https://aapinn.vercel.app/contact" />
+            </Helmet>
             <ContentComponent
               className={'pb-2 border-b border-dashed'}
               text={'Contact'}

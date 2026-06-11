@@ -18,10 +18,10 @@ import Giant from './Pages/Home/Giant'
 import Indomaret from './Pages/Home/Indomaret'
 import AceHardware from './Pages/Home/AceHardware'
 import Azko from './Pages/Home/Azko'
-import DynamicTitle from './Pages/components/DynamicTitle'
+
 import { ShootingStars } from '../src/Components/ui/shooting-stars'
 import { StarsBackground } from '../src/Components/ui/stars-background'
-import GiantProfile from './Pages/About/GiantProfile'
+
 import FloatingNavbar from './Pages/components/FloatingNavbar'
 
 AOS.init({
@@ -49,7 +49,6 @@ function App() {
       <NavbarComponent />
       {/* Tambahkan margin-left untuk memberi ruang pada konten agar tidak tertutup navbar */}
         <div className="max-w-7xl relative p-3 lg:p-8 lg:ml-[16rem] dark:bg-neutral-950/80 mt-3 min-h-[calc(100vh-20svh)] shadow-md  rounded-3xl mb-2">
-          <DynamicTitle/>
           <FloatingNavbar/>
           <Routes key={location.pathname}>
             <Route path="/" element={<Home/>} />
@@ -67,7 +66,6 @@ function App() {
             <Route path="/experience/Indomaret" element={<Indomaret/>}/>
             <Route path="/experience/AceHardware" element={<AceHardware/>}/>
             <Route path="/experience/Azko" element={<Azko/>}/>
-            <Route path="/about/Giant" element={<GiantProfile/>}/>
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>

@@ -1,4 +1,4 @@
-import React from 'react'
+import { Helmet } from 'react-helmet-async'
 import BackButton from '../components/BackButton'
 import ContentComponent from '../../Components/Content'
 import aceHardware from '../../image/aceHardware.png'
@@ -38,6 +38,12 @@ const moments = [
 function AceHardware() {
   return (
     <div data-aos='fade-down' data-aos-duration='1000' className='space-y-4 md:space-y-6'>
+      <Helmet>
+        <title>Ace Hardware Experience - Arif Rahman Hidayat</title>
+        <meta name="description" content="Pengalaman Arif Rahman Hidayat di Ace Hardware sebagai Sales Associate - ahli dalam home improvement dan customer service." />
+        <meta property="og:title" content="Ace Hardware Experience - Arif Rahman Hidayat" />
+        <meta property="og:description" content="Pengalaman Arif Rahman Hidayat di Ace Hardware sebagai Sales Associate." />
+      </Helmet>
       <BackButton/>
       <ContentComponent
         className='pb-2 border-b border-dashed'

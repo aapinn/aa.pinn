@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async'
 import { motion } from "framer-motion";
 import Content from "../Components/Content";
 import { servicesData } from "../data";
@@ -9,6 +10,13 @@ import { NavLink } from "react-router-dom";
 const Services = () => {
     return (
         <div data-aos='fade-down' data-aos-duration='1000'>
+          <Helmet>
+            <title>Layanan - Arif Rahman Hidayat</title>
+            <meta name="description" content="Layanan yang ditawarkan Arif Rahman Hidayat: Web Development, UI/UX Design, Digital Marketing, Tech Consulting, dan Graphic Design." />
+            <meta property="og:title" content="Layanan - Arif Rahman Hidayat" />
+            <meta property="og:description" content="Layanan Web Development, UI/UX Design, dan konsultasi teknologi dari Arif Rahman Hidayat." />
+            <meta property="og:url" content="https://aapinn.vercel.app/services" />
+          </Helmet>
           <Content
             icon={<RiServiceLine />}
             text={'Services'}

@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async'
 import { RiShoppingBag3Line, RiMapPinLine } from "react-icons/ri";
 import { TbHeart, TbCode, TbSparkles, TbSchool, TbBriefcase } from "react-icons/tb";
 import { educationData, WorkExperience } from "../data";
@@ -6,11 +7,17 @@ import SkillBar from "./components/SkillBar";
 import FunFacts from "./components/FunFacts";
 import { motion } from "framer-motion";
 import { MdVerified } from "react-icons/md";
-import logo from "../image/LogoBrand.png"
 
 const About = () => {
     return (
         <div data-aos='fade-down' data-aos-duration='1000'>
+          <Helmet>
+            <title>Tentang Saya - Arif Rahman Hidayat</title>
+            <meta name="description" content="Tentang Arif Rahman Hidayat - Software Engineer, Frontend Developer, dan UI/UX Designer dari Bekasi, Indonesia. Belajar otodidak sejak 2019." />
+            <meta property="og:title" content="Tentang Saya - Arif Rahman Hidayat" />
+            <meta property="og:description" content="Tentang Arif Rahman Hidayat - Software Engineer dan Frontend Developer dari Bekasi, Indonesia." />
+            <meta property="og:url" content="https://aapinn.vercel.app/about" />
+          </Helmet>
           {/* Hero Section with Avatar */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -163,7 +170,7 @@ const About = () => {
                       <div>
                         <h4 className="text-sm font-bold text-neutral-800 dark:text-neutral-200">{exp.title}</h4>
                         <p className="text-[11px] text-purple-500 dark:text-purple-400 font-medium mt-0.5">
-                          {exp.id === 5 ? 'Sales Executive' : exp.id === 4 ? 'Sales Associate' : exp.id === 3 ? 'Store Senior Leader' : exp.id === 2 ? 'Store Crew' : 'Intern'}
+                          {exp.id === 4 ? 'Sales Executive' : exp.id === 3 ? 'Sales Associate' : exp.id === 2 ? 'Store Senior Leader' : 'Intern'}
                         </p>
                       </div>
                       <span className="shrink-0 text-[10px] px-2 py-1 rounded-full bg-purple-100 dark:bg-purple-900/40 text-purple-600 dark:text-purple-300 font-medium">
@@ -171,10 +178,9 @@ const About = () => {
                       </span>
                     </div>
                     <p className="text-xs text-neutral-600 dark:text-neutral-400 mt-2 leading-relaxed">
-                      {exp.id === 5 && "Delivering exceptional service and solutions at Pt Aspirasi Hidup Indonesia, focusing on customer needs and building lasting relationships."}
-                      {exp.id === 4 && "Providing top-tier service at Pt Ace Hardware Indonesia, helping customers find the perfect tools and solutions for their projects."}
-                      {exp.id === 3 && "Led store operations and teams at Indomaret, mastering inventory management, cost control, and team leadership."}
-                      {exp.id === 2 && "Started the retail journey at Pt Albany Corona Lestari, learning the ropes of customer service and store operations."}
+                      {exp.id === 4 && "Delivering exceptional service and solutions at Pt Aspirasi Hidup Indonesia, focusing on customer needs and building lasting relationships."}
+                      {exp.id === 3 && "Providing top-tier service at Pt Ace Hardware Indonesia, helping customers find the perfect tools and solutions for their projects."}
+                      {exp.id === 2 && "Led store operations and teams at Indomaret, mastering inventory management, cost control, and team leadership."}
                       {exp.id === 1 && "First step into the professional world — an internship at Pt Giant Tbk that sparked my passion for working with people."}
                     </p>
                   </div>

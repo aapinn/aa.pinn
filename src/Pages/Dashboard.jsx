@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async'
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { BsCodeSlash } from "react-icons/bs";
@@ -42,6 +43,13 @@ const Dashboard = () => {
 
   return (
     <div data-aos='fade-down' data-aos-duration='1000'>
+      <Helmet>
+        <title>Dashboard - Arif Rahman Hidayat</title>
+        <meta name="description" content="Dashboard GitHub stats Arif Rahman Hidayat - lihat repositories, stars, followers, dan aktivitas coding." />
+        <meta property="og:title" content="Dashboard - Arif Rahman Hidayat" />
+        <meta property="og:description" content="Dashboard GitHub stats dan aktivitas coding Arif Rahman Hidayat." />
+        <meta property="og:url" content="https://aapinn.vercel.app/dashboard" />
+      </Helmet>
       <Content
         icon={<BsCodeSlash />}
         text={'Dashboard'}

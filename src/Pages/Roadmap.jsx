@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async'
 import { motion } from "framer-motion";
 import Content from "../Components/Content";
 import { HiOutlineLightBulb } from "react-icons/hi";
@@ -25,6 +26,13 @@ const goals = [
 const Roadmap = () => {
   return (
     <div data-aos='fade-down' data-aos-duration='1000' className="overflow-x-hidden">
+      <Helmet>
+        <title>Roadmap Belajar - Arif Rahman Hidayat</title>
+        <meta name="description" content="Perjalanan belajar dan roadmap pengembangan skill Arif Rahman Hidayat dari 2019 hingga masa depan." />
+        <meta property="og:title" content="Roadmap Belajar - Arif Rahman Hidayat" />
+        <meta property="og:description" content="Perjalanan belajar dan roadmap pengembangan skill Arif Rahman Hidayat." />
+        <meta property="og:url" content="https://aapinn.vercel.app/roadmap" />
+      </Helmet>
       <Content
         icon={<HiOutlineLightBulb />}
         text={'Roadmap'}

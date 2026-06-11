@@ -1,4 +1,4 @@
-import React from 'react'
+import { Helmet } from 'react-helmet-async'
 import BackButton from '../components/BackButton'
 import ContentComponent from '../../Components/Content'
 import portfolioV2Banner from '../../image/portfolioV2Banner.png'
@@ -7,6 +7,12 @@ import TextDescription from '../components/TextDescription'
 function portfolioV2() {
   return (
     <div data-aos='fade-down' data-aos-duration='1000'>
+      <Helmet>
+        <title>Portfolio V2 - Arif Rahman Hidayat</title>
+        <meta name="description" content="Portfolio V2 - Versi kedua dari personal website Arif Rahman Hidayat yang dibangun dengan React dan Tailwind CSS." />
+        <meta property="og:title" content="Portfolio V2 - Arif Rahman Hidayat" />
+        <meta property="og:description" content="Versi kedua dari personal website Arif Rahman Hidayat." />
+      </Helmet>
     <BackButton/>
     <ContentComponent
       className={'pb-2 border-b border-dashed'}

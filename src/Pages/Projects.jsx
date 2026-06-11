@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async'
 import Content from "../Components/Content";
 import GitHubProjects from "./components/GitHubProjects";
 import ProjectShowcase from "../Components/ProjectShowcase";
@@ -30,6 +31,13 @@ const liveProjects = [
 const Projects = () => {
   return (
     <div data-aos='fade-down' data-aos-duration='1000'>
+      <Helmet>
+        <title>Proyek - Arif Rahman Hidayat</title>
+        <meta name="description" content="Koleksi proyek Arif Rahman Hidayat - Portfolio V3, Catatan Belanja, dan berbagai proyek web development lainnya." />
+        <meta property="og:title" content="Proyek - Arif Rahman Hidayat" />
+        <meta property="og:description" content="Koleksi proyek web development Arif Rahman Hidayat." />
+        <meta property="og:url" content="https://aapinn.vercel.app/projects" />
+      </Helmet>
       <Content
         icon={<GoProjectSymlink />}
         text={'Projects'}

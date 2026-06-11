@@ -1,4 +1,4 @@
-import React from 'react'
+import { Helmet } from 'react-helmet-async'
 import BackButton from '../components/BackButton'
 import ContentComponent from '../../Components/Content'
 import catatanBelanjaBanner from '../../image/catatanBelanjaBanner.png'
@@ -6,6 +6,12 @@ import TextDescription from '../components/TextDescription'
 function CatatanBelanja() {
   return (
     <div data-aos='fade-down' data-aos-duration='1000'>
+      <Helmet>
+        <title>Catatan Belanja - Aplikasi Shopping Note</title>
+        <meta name="description" content="Catatan Belanja - Aplikasi web untuk mencatat dan mengelola daftar belanja dengan mudah." />
+        <meta property="og:title" content="Catatan Belanja - Aplikasi Shopping Note" />
+        <meta property="og:description" content="Aplikasi web untuk mencatat dan mengelola daftar belanja." />
+      </Helmet>
     <BackButton/>
     <ContentComponent
       className={'pb-2 border-b border-dashed'}
@@ -31,7 +37,7 @@ function CatatanBelanja() {
       <TextDescription
         subtitle={
           <>
-          Having a trouble with youre note, just click on me <a href="https://catatan-belanja-q.vercel.app/" target='_blank' className='bg-neutral-300 p-1 rounded-md text-blue-700 dark:bg-neutral-700 dark:text-blue-300'> Catatan BelanjaQ</a> 
+          Having trouble with your notes? Just click here <a href="https://catatan-belanja-q.vercel.app/" target='_blank' className='bg-neutral-300 p-1 rounded-md text-blue-700 dark:bg-neutral-700 dark:text-blue-300'> Catatan BelanjaQ</a> 
           </>
         }
       />

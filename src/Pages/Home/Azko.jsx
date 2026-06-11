@@ -1,4 +1,4 @@
-import React from 'react'
+import { Helmet } from 'react-helmet-async'
 import BackButton from '../components/BackButton'
 import ContentComponent from '../../Components/Content'
 import azko from '../../image/azko.png'
@@ -31,6 +31,12 @@ const achievements = [
 function Azko() {
   return (
     <div data-aos='fade-down' data-aos-duration='1000' className='space-y-4 md:space-y-6'>
+      <Helmet>
+        <title>AZKO Experience - Arif Rahman Hidayat</title>
+        <meta name="description" content="Pengalaman Arif Rahman Hidayat di AZKO (PT Aspirasi Hidup Indonesia Tbk) sebagai Advisor - home improvement specialist." />
+        <meta property="og:title" content="AZKO Experience - Arif Rahman Hidayat" />
+        <meta property="og:description" content="Pengalaman Arif Rahman Hidayat di AZKO sebagai Advisor - home improvement specialist." />
+      </Helmet>
       <BackButton/>
       <ContentComponent
         className='pb-2 border-b border-dashed'

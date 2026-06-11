@@ -13,7 +13,6 @@ import portfolioV3 from "../image/portfolioV3.png"
 import catatanBelanja from "../image/catatanBelanja.png"
 import portfolioV2 from "../image/portfolioV2.png"
 import giant from "../image/giant.png"
-import albany from "../image/albany.png"
 import indomaret from "../image/indomaret.png"
 import aceHardware from "../image/aceHardware.png"
 import ahi from "../image/ahi.png"
@@ -180,35 +179,29 @@ export const WorkExperience = [
           title: 'Pt Giant Tbk',
           date: 'Apr 2018 - Juli 2018',
           icon: giant,
-          path:'experience/Giant'  
+          path:'experience/Giant'
         },
         {
           id: 2,
-          title: 'Pt Albanyu Corona Lestari',
-          date: 'Juli 2018 - Jan 2020',
-          icon: albany,
-          path:'experience/Albany' 
-        },
-        {
-          id: 3,
           title: 'Pt Indomarco Prismatama Tbk',
           date: 'Jan 2020 - Okt 2022',
           icon: indomaret,
           path:'experience/Indomaret'
         },
         {
-          id: 4,
+          id: 3,
           title: 'Pt Ace Hardware Tbk',
           date: 'Okt 2022 - Juni 2024',
           icon: aceHardware,
           path:'experience/AceHardware'
         },
         {
-          id: 5,
+          id: 4,
           title: 'Pt Aspirasi Hidup Indonesia Tbk',
           date: 'Juni 2024 - Present',
           icon: ahi,
-          path:'experience/Ahi'
+          path:'#'
+
         },
   ]
 
