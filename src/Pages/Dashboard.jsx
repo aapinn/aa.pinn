@@ -1,14 +1,37 @@
 import { Helmet } from 'react-helmet-async'
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { BsCodeSlash } from "react-icons/bs";
 import { VscGithub } from "react-icons/vsc";
-import { TbCode, TbUsers, TbStar, TbGitFork, TbActivity } from "react-icons/tb";
+import { TbCode, TbUsers, TbStar, TbGitFork, TbActivity, TbBrain, TbCards, TbHandStop, TbPuzzle, TbQuote, TbNumbers } from "react-icons/tb";
 import Content from "../Components/Content";
+import QuizGame from "./components/QuizGame";
+import MemoryGame from "./components/MemoryGame";
+import RPSGame from "./components/RPSGame";
+import TicTacToe from "./components/TicTacToe";
+import QuoteGenerator from "./components/QuoteGenerator";
+import Game2048 from "./components/Game2048";
+import BadgeDisplay from "./components/BadgeDisplay";
+import { trackGamePlayed } from "../context/BadgeContext";
 
 const Dashboard = () => {
   const [githubData, setGithubData] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [activeGame, setActiveGame] = useState(null);
+
+  const games = [
+    { id: "quiz", label: "Quiz", icon: <TbBrain />, color: "from-purple-500 to-pink-500" },
+    { id: "memory", label: "Memory", icon: <TbCards />, color: "from-blue-500 to-cyan-500" },
+    { id: "rps", label: "RPS Lizard Spock", icon: <TbHandStop />, color: "from-green-500 to-emerald-500" },
+    { id: "tictactoe", label: "Tic Tac Toe", icon: <TbPuzzle />, color: "from-orange-500 to-red-500" },
+    { id: "quote", label: "Quote Generator", icon: <TbQuote />, color: "from-teal-500 to-cyan-500" },
+    { id: "game2048", label: "2048 Puzzle", icon: <TbNumbers />, color: "from-amber-500 to-orange-600" },
+  ];
+
+  const handleGameSelect = (gameId) => {
+    setActiveGame(gameId);
+    trackGamePlayed(gameId);
+  };
 
   useEffect(() => {
     const username = "aapinn";
@@ -174,6 +197,82 @@ const Dashboard = () => {
             ))}
           </div>
         </motion.div>
+      </div>
+
+      {/* Badge / Achievements */}
+      <div className="mt-6 mb-4">
+        <BadgeDisplay />
+      </div>
+
+      {/* Game Zone */}
+      <div className="mt-6 mb-4">
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="flex flex-wrap items-center justify-between gap-3 mb-4"
+        >
+          <div>
+            <h3 className="text-sm font-semibold text-neutral-800 dark:text-neutral-200 flex items-center gap-2">
+              🎮 Game Zone
+            </h3>
+            <p className="text-[10px] text-neutral-500 dark:text-neutral-400">
+              Seru-seruan sambil exploring dashboard!
+            </p>
+          </div>
+          {activeGame && (
+            <button
+              onClick={() => setActiveGame(null)}
+              className="text-xs px-3 py-1.5 rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors"
+            >
+              ✕ Close
+            </button>
+          )}
+        </motion.div>
+
+        {!activeGame ? (
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-3">
+            {games.map((game) => (
+              <motion.button
+                key={game.id}
+                onClick={() => handleGameSelect(game.id)}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.02, y: -2 }}
+                className={`p-5 rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-gradient-to-br ${game.color} text-white text-left hover:shadow-lg transition-all duration-300`}
+              >
+                <div className="text-2xl mb-2">{game.icon}</div>
+                <h4 className="text-sm font-semibold mb-1">{game.label}</h4>
+                <p className="text-[10px] text-white/80">
+                  {game.id === "quiz" && "Tebak-tebakan seru tentang Arif!"}
+                  {game.id === "memory" && "Asah ingatan dengan kartu tech!"}
+                  {game.id === "rps" && "Suit klasik versi Big Bang Theory!"}
+                  {game.id === "tictactoe" && "Kalahkan AI di Tic Tac Toe!"}
+                  {game.id === "quote" && "Kutipan inspirasional tentang tech!"}
+                  {game.id === "game2048" && "Gabungin angka sampai 2048!"}
+                </p>
+              </motion.button>
+            ))}
+          </div>
+        ) : (
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeGame}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+            >
+              {activeGame === "quiz" && <QuizGame />}
+              {activeGame === "memory" && <MemoryGame />}
+              {activeGame === "rps" && <RPSGame />}
+              {activeGame === "tictactoe" && <TicTacToe />}
+              {activeGame === "quote" && <QuoteGenerator />}
+              {activeGame === "game2048" && <Game2048 />}
+            </motion.div>
+          </AnimatePresence>
+        )}
       </div>
     </div>
   );

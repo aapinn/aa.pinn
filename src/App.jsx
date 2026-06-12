@@ -23,6 +23,7 @@ import { ShootingStars } from '../src/Components/ui/shooting-stars'
 import { StarsBackground } from '../src/Components/ui/stars-background'
 
 import FloatingNavbar from './Pages/components/FloatingNavbar'
+import { BadgeProvider } from './context/BadgeContext'
 
 AOS.init({
   once:true
@@ -46,6 +47,7 @@ function App() {
           />
       <div className="w-full pointer-events-none inset-0 lg:flex items-center justify-center dark:bg-black bg-white duration-500 dark:[mask-image:none] [mask-image:radial-gradient(ellipse_at_center,white,transparent_50%)] dark:bg-grid-transparent bg-grid-slate-400/[0.2]"></div>
 
+      <BadgeProvider>
       <NavbarComponent />
       {/* Tambahkan margin-left untuk memberi ruang pada konten agar tidak tertutup navbar */}
         <div className="max-w-7xl relative p-3 lg:p-8 lg:ml-[16rem] dark:bg-neutral-950/80 mt-3 min-h-[calc(100vh-20svh)] shadow-md  rounded-3xl mb-2">
@@ -69,6 +71,7 @@ function App() {
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
+      </BadgeProvider>
     </div>
   );
 }
