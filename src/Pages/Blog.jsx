@@ -119,6 +119,7 @@ function Blog() {
         })}
       </div>
 
+      {/* 🌍 CLUE 4: Ada petunjuk di quote bawah — hitung jumlah katanya */}
       {/* Footer Quote */}
       <motion.div
         initial={{ opacity: 0 }}

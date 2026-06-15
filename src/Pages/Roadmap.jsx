@@ -75,8 +75,9 @@ const Roadmap = () => {
         ))}
       </div>
 
+      {/* 📜 CLUE 5: Goals (4) + Milestone yang sudah selesai (ada centangnya) = jawabanmu */}
       {/* Goals */}
-      <div className="my-8 p-6 rounded-2xl bg-gradient-to-r from-purple-500/10 via-pink-500/10 to-orange-500/10 border border-purple-200 dark:border-purple-800/30">
+      <div className=" p-6 rounded-2xl bg-gradient-to-r from-purple-500/10 via-pink-500/10 to-orange-500/10 border border-purple-200 dark:border-purple-800/30">
         <h3 className="text-lg font-semibold text-neutral-800 dark:text-neutral-200 mb-4 flex items-center gap-2">
           <TbTarget className="text-purple-500" /> Goals & Aspirations
         </h3>

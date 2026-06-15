@@ -106,6 +106,7 @@ const About = () => {
             </motion.div>
           </div>
 
+          {/* 🧩 CLUE 3: Aku hewan berkaki empat, suka memakan tikus, dan bersuara 'meow'. Siapa aku? Hitung jumlah huruf namanya. */}
           {/* Skills */}
           <SkillBar />
 

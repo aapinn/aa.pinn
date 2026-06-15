@@ -80,6 +80,7 @@ const Dashboard = () => {
         showCards={false}
       />
 
+      {/* 🧠 CLUE 7: Hitung jumlah stat cards di grid ini — ada berapa? */}
       {/* GitHub Stats Grid */}
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 my-4">
         {statsCards.map((stat, idx) => (
@@ -205,7 +206,7 @@ const Dashboard = () => {
       </div>
 
       {/* Game Zone */}
-      <div className="mt-6 mb-4">
+      <div className="mt-6 ">
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}

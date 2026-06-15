@@ -18,6 +18,7 @@ import Giant from './Pages/Home/Giant'
 import Indomaret from './Pages/Home/Indomaret'
 import AceHardware from './Pages/Home/AceHardware'
 import Azko from './Pages/Home/Azko'
+import Enigma from './Pages/Enigma'
 
 import { ShootingStars } from '../src/Components/ui/shooting-stars'
 import { StarsBackground } from '../src/Components/ui/stars-background'
@@ -36,7 +37,7 @@ function App() {
   }, [location.pathname])
 
   return (
-    <div className="px-3 w-full h-full mt-12 md:mt-16 lg:mt-0 container font-sora">
+    <div className="px-2 w-full h-full mt-12 md:mt-16 lg:mt-0 container font-sora">
       <ShootingStars
         starWidth='15'
         minDelay={'10'}
@@ -61,6 +62,7 @@ function App() {
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/services" element={<Services />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/enigma" element={<Enigma />} />
             <Route path="/latestArticle/CatatanBelanja" element={<CatatanBelanja/>}/>
             <Route path="/latestArticle/PortfolioV2" element={<PortfolioV2/>}/>
             <Route path="/latestArticle/PortfolioV3" element={<PortfolioV3/>}/>

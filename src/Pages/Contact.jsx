@@ -296,6 +296,7 @@ const ContactMain = () => (
 const Contact = () => {
     return(
         <div data-aos='fade-down' data-aos-duration='1000' className="min-h-screen flex flex-col bg-white dark:bg-transparent">
+            {/* 🔍 CLUE 6: Berapa jumlah link sosial media yang ada di halaman ini? Hitung! */}
             <Helmet>
               <title>Kontak - Arif Rahman Hidayat</title>
               <meta name="description" content="Hubungi Arif Rahman Hidayat untuk kolaborasi, proyek, atau sekadar bertanya. Tersedia melalui email, Instagram, dan GitHub." />

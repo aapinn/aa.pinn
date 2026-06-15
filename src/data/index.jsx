@@ -18,6 +18,7 @@ import aceHardware from "../image/aceHardware.png"
 import ahi from "../image/ahi.png"
 import azko from "../image/azko.png"
 import { LiaBlogSolid } from "react-icons/lia";
+import { TbPuzzle } from "react-icons/tb";
 
 export const navLinks = [
     {
@@ -67,6 +68,12 @@ export const navLinks = [
         path: 'contact',
         id:8,
         icon: <IoPaperPlaneOutline />
+    },
+    {
+        name: 'Enigma',
+        path: 'enigma',
+        id:9,
+        icon: <TbPuzzle />
     }
 ]
 
@@ -153,7 +160,7 @@ export const itemCards = [
     {
         id: 5,
         title: 'Indomaret Experience',
-        date: 'Store Crew Junior - Senior Leader',
+        date: 'Store Crew - Store Senior Leader',
         icon: indomaret,
         path:'experience/Indomaret'
     },
@@ -184,21 +191,21 @@ export const WorkExperience = [
         {
           id: 2,
           title: 'Pt Indomarco Prismatama Tbk',
-          date: 'Jan 2020 - Okt 2022',
+          date: 'Jan 2018 - Okt 2023',
           icon: indomaret,
           path:'experience/Indomaret'
         },
         {
           id: 3,
           title: 'Pt Ace Hardware Tbk',
-          date: 'Okt 2022 - Juni 2024',
+          date: 'Okt 2023 - Juni 2025',
           icon: aceHardware,
           path:'experience/AceHardware'
         },
         {
           id: 4,
           title: 'Pt Aspirasi Hidup Indonesia Tbk',
-          date: 'Juni 2024 - Present',
+          date: 'Juni 2025 - Present',
           icon: ahi,
           path:'#'
 
@@ -210,7 +217,7 @@ export const educationData = [
     id: 1,
     school: "SMK Bussines and Technology Bekasi",
     major: "Manajement Technology",
-    year: "2015 - 2018",
+    year: "2016 - 2018",
     desc: "Learned the fundamentals of business, technology, and management principles, with a focus on practical skills and real-world applications"
   },
   {
