@@ -48,7 +48,7 @@ const GitHubProjects = ({ username = "aapinn" }) => {
   }
 
   return (
-    <div className="my-8">
+    <div>
       <div className="flex items-center gap-3 mb-6">
         <VscGithub className="text-2xl text-neutral-700 dark:text-neutral-300" />
         <h3 className="text-lg font-semibold text-neutral-800 dark:text-neutral-200">
@@ -67,7 +67,7 @@ const GitHubProjects = ({ username = "aapinn" }) => {
             viewport={{ once: true }}
             transition={{ duration: 0.3, delay: idx * 0.05 }}
             whileHover={{ scale: 1.03 }}
-            className="block p-4 rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white/50 dark:bg-neutral-900/50 backdrop-blur-sm hover:shadow-lg dark:hover:shadow-neutral-800/50 duration-300"
+            className="block p-4 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white/50 dark:bg-neutral-900/50 backdrop-blur-sm hover:shadow-lg dark:hover:shadow-neutral-800/50 duration-300"
           >
             <div className="flex items-start gap-2 mb-2">
               <TbCode className="text-purple-500 mt-1 shrink-0" />

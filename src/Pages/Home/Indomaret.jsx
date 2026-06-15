@@ -13,9 +13,9 @@ const stats = [
 ]
 
 const ladder = [
-  { role: 'Store Crew Junior', period: '2020', desc: 'Mastered the fundamentals — cashier, stocking, customer service, store cleanliness.', icon: <TbMedal/>, gradient: 'from-blue-400 to-sky-500' },
-  { role: 'Store Crew Senior', period: '2021-2022', desc: 'Trained new hires, managed inventory, handled higher-level customer escalations.', icon: <TbChartLine/>, gradient: 'from-sky-400 to-cyan-500' },
-  { role: 'Store Senior Leader', period: '2022-2024', desc: 'Full operational ownership — scheduling, reporting, cash management, team leadership.', icon: <TbCrown/>, gradient: 'from-cyan-400 to-teal-500' },
+  { role: 'Store Crew ', period: '2018', desc: 'Mastered the fundamentals — cashier, stocking, customer service, store cleanliness.', icon: <TbMedal/>, gradient: 'from-blue-400 to-sky-500' },
+  { role: 'Store Junior Leader', period: '2020-2021', desc: 'Trained new hires, managed inventory, handled higher-level customer escalations.', icon: <TbChartLine/>, gradient: 'from-sky-400 to-cyan-500' },
+  { role: 'Store Senior Leader', period: '2021-2023', desc: 'Full operational ownership — scheduling, reporting, cash management, team leadership.', icon: <TbCrown/>, gradient: 'from-cyan-400 to-teal-500' },
 ]
 
 const achievements = [
