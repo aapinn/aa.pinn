@@ -24,7 +24,7 @@ const Services = () => {
             showCards={false}
           />
 
-          <div className="text-center mb-8">
+          <div className="text-center my-8">
             <p className="text-sm text-neutral-600 dark:text-neutral-400">
               I offer{" "}
               <Typewriter
