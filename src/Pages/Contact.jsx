@@ -143,7 +143,7 @@ const ContactForm = () => {
           onChange={handleChange}
           required
           maxLength={100}
-          className="w-full p-3 border border-neutral-300 dark:border-neutral-600 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent bg-white dark:bg-neutral-800 text-neutral-900 dark:text-white placeholder-neutral-400 dark:placeholder-neutral-500 text-sm duration-300 outline-none"
+          className="w-full p-3 border dashed border-neutral-300 dark:border-neutral-600 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent bg-white dark:bg-neutral-800 text-neutral-900 dark:text-white placeholder-neutral-400 dark:placeholder-neutral-500 text-sm duration-300 outline-none"
         />
         <input
           type="email"
@@ -298,14 +298,14 @@ const Contact = () => {
         <div data-aos='fade-down' data-aos-duration='1000' className="min-h-screen flex flex-col bg-white dark:bg-transparent">
             {/* 🔍 CLUE 6: Berapa jumlah link sosial media yang ada di halaman ini? Hitung! */}
             <Helmet>
-              <title>Kontak - Arif Rahman Hidayat</title>
+              <title>Contact - Arif Rahman Hidayat</title>
               <meta name="description" content="Hubungi Arif Rahman Hidayat untuk kolaborasi, proyek, atau sekadar bertanya. Tersedia melalui email, Instagram, dan GitHub." />
-              <meta property="og:title" content="Kontak - Arif Rahman Hidayat" />
+              <meta property="og:title" content="Contact - Arif Rahman Hidayat" />
               <meta property="og:description" content="Hubungi Arif Rahman Hidayat untuk kolaborasi, proyek, atau sekadar bertanya." />
               <meta property="og:url" content="https://aapinn.vercel.app/contact" />
             </Helmet>
             <ContentComponent
-              className={'pb-2 border-b border-dashed'}
+              className={'pb-2 border-b border-dashed border-neutral-300 dark:border-neutral-700'}
               text={'Contact'}
               showCards={false}
             />

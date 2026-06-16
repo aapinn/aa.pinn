@@ -12,9 +12,9 @@ const About = () => {
     return (
         <div data-aos='fade-down' data-aos-duration='1000'>
           <Helmet>
-            <title>Tentang Saya - Arif Rahman Hidayat</title>
+            <title>About Me - Arif Rahman Hidayat</title>
             <meta name="description" content="Tentang Arif Rahman Hidayat - Software Engineer, Frontend Developer, dan UI/UX Designer dari Bekasi, Indonesia. Belajar otodidak sejak 2019." />
-            <meta property="og:title" content="Tentang Saya - Arif Rahman Hidayat" />
+            <meta property="og:title" content="About Me - Arif Rahman Hidayat" />
             <meta property="og:description" content="Tentang Arif Rahman Hidayat - Software Engineer dan Frontend Developer dari Bekasi, Indonesia." />
             <meta property="og:url" content="https://aapinn.vercel.app/about" />
           </Helmet>

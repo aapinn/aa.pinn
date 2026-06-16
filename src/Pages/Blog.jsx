@@ -60,9 +60,9 @@ function Blog() {
   return (
     <div data-aos="fade-down" data-aos-duration="1000">
       <Helmet>
-        <title>Blog & Catatan - Arif Rahman Hidayat</title>
+        <title>Blog & Notes - Arif Rahman Hidayat</title>
         <meta name="description" content="Blog dan catatan perjalanan Arif Rahman Hidayat dalam dunia coding. Tips, cerita, dan pembelajaran seputar web development." />
-        <meta property="og:title" content="Blog & Catatan - Arif Rahman Hidayat" />
+        <meta property="og:title" content="Blog & Notes - Arif Rahman Hidayat" />
         <meta property="og:description" content="Blog dan catatan perjalanan Arif Rahman Hidayat dalam dunia coding." />
         <meta property="og:url" content="https://aapinn.vercel.app/blog" />
       </Helmet>

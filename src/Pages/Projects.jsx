@@ -32,10 +32,10 @@ const Projects = () => {
   return (
     <div data-aos='fade-down' data-aos-duration='1000'>
       <Helmet>
-        <title>Proyek - Arif Rahman Hidayat</title>
-        <meta name="description" content="Koleksi proyek Arif Rahman Hidayat - Portfolio V3, Catatan Belanja, dan berbagai proyek web development lainnya." />
-        <meta property="og:title" content="Proyek - Arif Rahman Hidayat" />
-        <meta property="og:description" content="Koleksi proyek web development Arif Rahman Hidayat." />
+        <title>Projects - Arif Rahman Hidayat</title>
+        <meta name="description" content="Collection of projects by Arif Rahman Hidayat - Portfolio V3, Shopping Notes, and other web development projects." />
+        <meta property="og:title" content="Projects - Arif Rahman Hidayat" />
+        <meta property="og:description" content="Collection of web development projects by Arif Rahman Hidayat." />
         <meta property="og:url" content="https://aapinn.vercel.app/projects" />
       </Helmet>
       <Content

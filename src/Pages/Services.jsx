@@ -11,10 +11,10 @@ const Services = () => {
     return (
         <div data-aos='fade-down' data-aos-duration='1000'>
           <Helmet>
-            <title>Layanan - Arif Rahman Hidayat</title>
-            <meta name="description" content="Layanan yang ditawarkan Arif Rahman Hidayat: Web Development, UI/UX Design, Digital Marketing, Tech Consulting, dan Graphic Design." />
-            <meta property="og:title" content="Layanan - Arif Rahman Hidayat" />
-            <meta property="og:description" content="Layanan Web Development, UI/UX Design, dan konsultasi teknologi dari Arif Rahman Hidayat." />
+            <title>Services - Arif Rahman Hidayat</title>
+            <meta name="description" content="Services offered by Arif Rahman Hidayat: Web Development, UI/UX Design, Digital Marketing, Tech Consulting, and Graphic Design." />
+            <meta property="og:title" content="Services - Arif Rahman Hidayat" />
+            <meta property="og:description" content="Web Development, UI/UX Design, and technology consulting services by Arif Rahman Hidayat." />
             <meta property="og:url" content="https://aapinn.vercel.app/services" />
           </Helmet>
           <Content
