@@ -5,6 +5,7 @@ import { educationData, WorkExperience } from "../data";
 import Content from "../Components/Content";
 import SkillBar from "./components/SkillBar";
 import FunFacts from "./components/FunFacts";
+import NowSection from "./components/NowSection";
 import { motion } from "framer-motion";
 import { MdVerified } from "react-icons/md";
 
@@ -201,6 +202,9 @@ const About = () => {
               </a>
             </div>
           </div>
+
+          {/* Now Section */}
+          <NowSection />
         </div>
     )
   }

@@ -19,6 +19,12 @@
     <meta name="twitter:description" content="Portfolio pribadi Arif Rahman Hidayat - Software Engineer, Frontend Developer, dan UI/UX Designer dari Bekasi, Indonesia." />
     <meta name="twitter:image" content="https://aapinn.vercel.app/src/image/LogoBrand.png" />
     <link rel="canonical" href="https://aapinn.vercel.app" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="theme-color" content="#0a0a0a" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="aa.pinn" />
+    <link rel="apple-touch-icon" href="/icon-192x192.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
@@ -26,6 +32,7 @@
     <title>Arif Rahman Hidayat | Software Engineer & Frontend Developer</title>
   </head>
   <body>
+    <script>(function(){var d=localStorage.getItem('dark-mode');if(d!==null?d==='true':window.matchMedia('(prefers-color-scheme:dark)').matches)document.body.classList.add('dark')})()</script>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

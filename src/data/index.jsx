@@ -9,6 +9,9 @@ import { BsCodeSlash } from "react-icons/bs";
 import { HiOutlineLightBulb } from "react-icons/hi";
 import { GoProjectSymlink } from "react-icons/go";
 import DarkModeToggle from "../Pages/components/DarkModeToggle";
+import SearchModal from "../Pages/components/SearchModal";
+import { useState, useEffect } from "react";
+import { TbSearch } from "react-icons/tb";
 import portfolioV3 from "../image/portfolioV3.png"
 import catatanBelanja from "../image/catatanBelanja.png"
 import portfolioV2 from "../image/portfolioV2.png"
@@ -19,6 +22,9 @@ import ahi from "../image/ahi.png"
 import azko from "../image/azko.png"
 import { LiaBlogSolid } from "react-icons/lia";
 import { TbPuzzle } from "react-icons/tb";
+import { TbClock } from "react-icons/tb";
+import { TbTools } from "react-icons/tb";
+import { TbMessage } from "react-icons/tb";
 
 export const navLinks = [
     {
@@ -78,6 +84,19 @@ export const navLinks = [
 ]
 
 export const Navbar = (props) => {
+  const [searchOpen, setSearchOpen] = useState(false)
+
+  useEffect(() => {
+    const handler = (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+        e.preventDefault()
+        setSearchOpen((prev) => !prev)
+      }
+    }
+    window.addEventListener('keydown', handler)
+    return () => window.removeEventListener('keydown', handler)
+  }, [])
+
   return (
       <div className="w-full h-[12rem] lg:fixed lg:mt-2 overflow-hidden bg-transparent lg:border-none lg:h-full lg:w-[17rem] top-0 z-50 lg:overflow-y-auto scrollbar-hide duration-500">
         <div className="duration-500 bg-transparent lg:bg-white dark:lg:bg-black lg:absolute font-normal p-4 flex flex-col z-50 gap-3 mt-1 py-2 dark:text-neutral-200 text-md rounded-r-2xl lg:shadow-[4px_0_10px_rgb(0,0,0,0.2)] dark:shadow-[4px_0_10px_rgb(0,0,0,0.2)] dark:shadow-neutral-900">
@@ -105,6 +124,14 @@ export const Navbar = (props) => {
             </h1>
             <p className="text-sm font-geist text-neutral-700 dark:text-neutral-400 font-normal">{props.nick}</p>
           </div>
+          <button
+            onClick={() => setSearchOpen(true)}
+            className="flex p-2 rounded-md items-center gap-4 w-full hover:bg-neutral-200 dark:hover:bg-neutral-400 dark:bg-transparent dark:hover:text-neutral-800 dark:bg-neutral-900 text-neutral-700 dark:text-neutral-400 duration-500 text-sm font-normal"
+          >
+            <TbSearch className="text-base" />
+            Search
+            <span className="ml-auto text-[10px] px-1.5 py-0.5 rounded bg-neutral-200 dark:bg-neutral-700 text-neutral-500">Ctrl+K</span>
+          </button>
           {navLinks.map((link) => (
             <div key={link.id}>
               <NavLink
@@ -124,6 +151,7 @@ export const Navbar = (props) => {
             ©2025 with 💖 by Arif Rahman
           </p>
         </div>
+        <SearchModal open={searchOpen} onClose={() => setSearchOpen(false)} />
       </div>
     );
   };

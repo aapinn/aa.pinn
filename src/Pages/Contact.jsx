@@ -227,70 +227,70 @@ const ContactForm = () => {
 };
 
 const ContactMain = () => (
-  <div className="pb-10">
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-      <div>
-        <div className="p-6 rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white/40 dark:bg-neutral-900/40 backdrop-blur-sm">
-          <h2 className="text-xl font-bold text-neutral-900 dark:text-white mb-2">What's need to be fixed?</h2>
-          <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-6">
-            Have a project, idea, or just want to say hi? Fill in the form and I'll get back to you!
-          </p>
-          <ContactForm />
-        </div>
-      </div>
-      <div>
-        <div className="p-6 rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white/40 dark:bg-neutral-900/40 backdrop-blur-sm h-full">
-          <h2 className="text-xl font-bold text-neutral-900 dark:text-white mb-4">Let's Connect</h2>
-          <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-6">
-            I'm always open to new opportunities, collaborations, or just a good conversation.
-          </p>
-          <div className="space-y-4">
-            {[
-              { icon: <TbMail className="text-xl" />, label: "Email", value: "arifrh9185@gmail.com" },
-              { icon: <TbMapPin className="text-xl" />, label: "Location", value: "Bekasi, Indonesia" },
-              { icon: <TbPhone className="text-xl" />, label: "Phone", value: "+62 xxx-xxxx-xxxx (DM Me On Instagram)" },
-            ].map((item, idx) => (
-              <div key={idx} className="flex items-center gap-3 p-3 rounded-xl bg-white/50 dark:bg-neutral-800/50">
-                <div className="text-purple-500">{item.icon}</div>
-                <div>
-                  <p className="text-xs text-neutral-500 dark:text-neutral-400">{item.label}</p>
-                  <p className="text-sm text-neutral-700 dark:text-neutral-300">{item.value}</p>
-                </div>
-              </div>
-            ))}
+    <div className="">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div>
+          <div className="p-6 rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white/40 dark:bg-neutral-900/40 backdrop-blur-sm">
+            <h2 className="text-xl font-bold text-neutral-900 dark:text-white mb-2">What's need to be fixed?</h2>
+            <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-6">
+              Have a project, idea, or just want to say hi? Fill in the form and I'll get back to you!
+            </p>
+            <ContactForm />
           </div>
-          <div className="mt-6">
-            <h4 className="text-sm font-semibold text-neutral-700 dark:text-neutral-300 mb-3">Social Media</h4>
-            <div className="flex gap-3">
+        </div>
+        <div>
+          <div className="p-6 rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white/40 dark:bg-neutral-900/40 backdrop-blur-sm h-full">
+            <h2 className="text-xl font-bold text-neutral-900 dark:text-white mb-4">Let's Connect</h2>
+            <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-6">
+              I'm always open to new opportunities, collaborations, or just a good conversation.
+            </p>
+            <div className="space-y-4">
               {[
-                { icon: <TbBrandGithub />, url: "https://github.com/aapinn", label: "GitHub" },
-                { icon: <TbBrandInstagram />, url: "https://www.instagram.com/__aapinn/#", label: "Instagram" },
-                { icon: <TbBrandFacebook />, url: "https://www.facebook.com/avenged.arifsevenfold", label: "Facebook" },
-                { icon: <TbBrandTiktok />, url: "https://www.tiktok.com/@arifpake.ef?lang=en", label: "TikTok" },
-              ].map((social, idx) => (
-                <a
-                  key={idx}
-                  href={social.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-3 rounded-xl bg-white/50 dark:bg-neutral-800/50 text-neutral-600 dark:text-neutral-400 hover:text-purple-500 hover:bg-purple-50 dark:hover:bg-purple-900/20 duration-300"
-                  title={social.label}
-                >
-                  {social.icon}
-                </a>
+                { icon: <TbMail className="text-xl" />, label: "Email", value: "arifrh9185@gmail.com" },
+                { icon: <TbMapPin className="text-xl" />, label: "Location", value: "Bekasi, Indonesia" },
+                { icon: <TbPhone className="text-xl" />, label: "Phone", value: "+62 xxx-xxxx-xxxx (DM Me On Instagram)" },
+              ].map((item, idx) => (
+                <div key={idx} className="flex items-center gap-3 p-3 rounded-xl bg-white/50 dark:bg-neutral-800/50">
+                  <div className="text-purple-500">{item.icon}</div>
+                  <div>
+                    <p className="text-xs text-neutral-500 dark:text-neutral-400">{item.label}</p>
+                    <p className="text-sm text-neutral-700 dark:text-neutral-300">{item.value}</p>
+                  </div>
+                </div>
               ))}
             </div>
-          </div>
-          <div className="mt-6 p-4 rounded-xl bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-200 dark:border-purple-800/30">
-            <p className="text-xs text-neutral-600 dark:text-neutral-400 flex items-center gap-1">
-              <TbHeart className="text-pink-500" /> 
-              I typically respond within 24 hours. Can't wait to hear from you!
-            </p>
+            <div className="mt-6">
+              <h4 className="text-sm font-semibold text-neutral-700 dark:text-neutral-300 mb-3">Social Media</h4>
+              <div className="flex gap-3">
+                {[
+                  { icon: <TbBrandGithub />, url: "https://github.com/aapinn", label: "GitHub" },
+                  { icon: <TbBrandInstagram />, url: "https://www.instagram.com/__aapinn/#", label: "Instagram" },
+                  { icon: <TbBrandFacebook />, url: "https://www.facebook.com/avenged.arifsevenfold", label: "Facebook" },
+                  { icon: <TbBrandTiktok />, url: "https://www.tiktok.com/@arifpake.ef?lang=en", label: "TikTok" },
+                ].map((social, idx) => (
+                  <a
+                    key={idx}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-3 rounded-xl bg-white/50 dark:bg-neutral-800/50 text-neutral-600 dark:text-neutral-400 hover:text-purple-500 hover:bg-purple-50 dark:hover:bg-purple-900/20 duration-300"
+                    title={social.label}
+                  >
+                    {social.icon}
+                  </a>
+                ))}
+              </div>
+            </div>
+            <div className="mt-6 p-4 rounded-xl bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-200 dark:border-purple-800/30">
+              <p className="text-xs text-neutral-600 dark:text-neutral-400 flex items-center gap-1">
+                <TbHeart className="text-pink-500" /> 
+                I typically respond within 24 hours. Can't wait to hear from you!
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 );
 
 const Contact = () => {

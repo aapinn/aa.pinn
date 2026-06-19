@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { BsCodeSlash } from "react-icons/bs";
 import { VscGithub } from "react-icons/vsc";
-import { TbCode, TbUsers, TbStar, TbGitFork, TbActivity, TbBrain, TbCards, TbHandStop, TbPuzzle, TbQuote, TbNumbers } from "react-icons/tb";
+import { TbCode, TbUsers, TbStar, TbGitFork, TbActivity, TbBrain, TbCards, TbHandStop, TbPuzzle, TbQuote, TbNumbers, TbDeviceGamepad2 } from "react-icons/tb";
 import Content from "../Components/Content";
 import QuizGame from "./components/QuizGame";
 import MemoryGame from "./components/MemoryGame";
@@ -11,6 +11,8 @@ import RPSGame from "./components/RPSGame";
 import TicTacToe from "./components/TicTacToe";
 import QuoteGenerator from "./components/QuoteGenerator";
 import Game2048 from "./components/Game2048";
+import SnakeGame from "./components/SnakeGame";
+import UsesSection from "./components/UsesSection";
 import BadgeDisplay from "./components/BadgeDisplay";
 import { trackGamePlayed } from "../context/BadgeContext";
 
@@ -26,6 +28,7 @@ const Dashboard = () => {
     { id: "tictactoe", label: "Tic Tac Toe", icon: <TbPuzzle />, color: "from-orange-500 to-red-500" },
     { id: "quote", label: "Quote Generator", icon: <TbQuote />, color: "from-teal-500 to-cyan-500" },
     { id: "game2048", label: "2048 Puzzle", icon: <TbNumbers />, color: "from-amber-500 to-orange-600" },
+    { id: "snake", label: "Snake", icon: <TbDeviceGamepad2 />, color: "from-green-600 to-emerald-500" },
   ];
 
   const handleGameSelect = (gameId) => {
@@ -200,6 +203,9 @@ const Dashboard = () => {
         </motion.div>
       </div>
 
+      {/* Uses Section */}
+      <UsesSection />
+
       {/* Badge / Achievements */}
       <div className="mt-6 mb-4">
         <BadgeDisplay />
@@ -252,6 +258,7 @@ const Dashboard = () => {
                   {game.id === "tictactoe" && "Kalahkan AI di Tic Tac Toe!"}
                   {game.id === "quote" && "Kutipan inspirasional tentang tech!"}
                   {game.id === "game2048" && "Gabungin angka sampai 2048!"}
+                  {game.id === "snake" && "Makan apel, jangan nabrak!"}
                 </p>
               </motion.button>
             ))}
@@ -271,6 +278,7 @@ const Dashboard = () => {
               {activeGame === "tictactoe" && <TicTacToe />}
               {activeGame === "quote" && <QuoteGenerator />}
               {activeGame === "game2048" && <Game2048 />}
+              {activeGame === "snake" && <SnakeGame />}
             </motion.div>
           </AnimatePresence>
         )}
